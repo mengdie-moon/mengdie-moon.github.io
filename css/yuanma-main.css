@@ -1,0 +1,258 @@
+*{
+    padding: 0;
+    margin: 0;
+    text-decoration: none;
+}
+body{
+    cursor: url(https://cdn.jsdelivr.net/gh/moezx/cdn@3.1.9/img/Sakura/cursor/ayuda.cur), pointer;
+    background-color: #EFEFEF;
+}
+/* 临时新增内容都放在上面了 所以排版会有点奇怪莫怪！ */
+#footer{
+    margin: 75px 0;
+    width: 97%;
+    /* height: 20px; */
+    padding: 20px;
+    text-align: center;
+    color: #b0afaf;
+    border-radius: 10px;
+}
+input, p, span, h1, h2, h3, h4{
+    cursor: url(../img/texto.cur), text;
+}
+a, button, canvas{
+    cursor: url(../img/cur.cur), pointer;
+}
+.page-top img{
+    width: 20px;
+    height: 20px;
+}
+.page{
+    width: 100%;
+    height: 100vh;
+}
+.page .page-top{
+    box-shadow: 4px 0 4px 0 rgba(0,0,0,0.3);
+    z-index: 999;
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 8.8vh;
+    width: 90%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-left: 5%;
+    padding-right: 5%;
+    background-color: rgb(255, 255, 255);
+}
+.page-top a{
+    font-size: 30px;
+    text-decoration: none;
+    font-weight: bold;
+    color: rgb(203, 189, 100);
+}
+.page-top p{
+    color: rgba(0,0,0,0.3);
+}
+.page-top input{
+    height: 40%;
+    border-radius: 5px;
+    background-color: #f7f6f6;
+    outline: none;
+    padding-left: 20px;
+    border: 1px solid rgba(0,0,0,0.1);
+}
+.search {
+    display: flex;
+    justify-content: center;
+    width: 40%;
+}
+.search img {
+    border-radius: 5px;
+    max-width: 25px;
+    max-height: 25px;
+    margin-top: 10px;
+    margin-right: 20px;
+    transition: transform 0.2s ease, box-shadow 0.2s ease, filter 0.2s ease;
+}
+.search img:hover {
+    box-shadow: 0 0 10px aqua,
+                0 0 6px aqua;
+    filter: brightness(1.2);
+}
+.search img.active {
+    transform: scale(1.1);
+    box-shadow: none;
+    filter: none;
+}
+.search img.blank {
+    opacity: 0.5; 
+}
+#expandable-input {
+    transition: width 0.7s ease;
+    width: 40%;
+    padding: 10px;
+    box-sizing: border-box;
+    border-radius: 5px;
+    background-color: #f7f6f6;
+    outline: none;
+    border: 1px solid rgba(0,0,0,0.1);
+}
+#expandable-input:focus {
+    width: 80%;
+}
+.page .page-con{
+    display: flex;
+    height: 91.2vh;
+    margin-top: 8.8vh;
+}
+.pc-nav{
+    align-content: space-between;
+    display: flex;
+    flex-wrap: wrap;
+    left: 0;
+    top: 0;
+    padding-top: 8.8vh;
+    height: 91.2vh;
+    position: fixed;
+    background-color: #fff;
+    width: 10%;
+    box-shadow: 4px 0 4px 0 #ccc;
+}
+.pc-box{
+    margin-left: 13%;
+}
+.code{
+    text-align: center;
+    width: 100%;
+    margin-bottom: 5vh;
+}
+.nav{
+    margin-top: 6vh;
+    width: 100%;
+}
+.nav .time{
+    font-size: 18px;
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+.nav .time #current-time{
+    display: inline;
+}
+.nav a, .nav h3, .nav p, .time{
+    width: 100%;
+    display: block;
+    text-align: center;
+    padding: 20px 0;
+    color: #666666;
+}
+.nav #quoteDisplay, .nav h3{font-family:'Courier New', Courier, monospace;}
+.nav #quoteDisplay{
+    font-size: 12px;
+    background-color: #eab6b6;
+    border-radius: 8px;
+}
+.code p{
+    margin-top: 10px;
+    font-size: 14px;
+    color: rgba(0,0,0,0.6);
+}
+.code img{
+    border-radius: 8px;
+    width: 150px;
+    height: 150px;
+}
+.nav .clicked{
+    color: rgb(203, 189, 100);
+}
+.nav a:hover{
+    border-left: 8px solid aqua;
+    margin-left: 10px;
+    color: rgb(203, 189, 100);
+    padding: 20px;
+}
+.code img{
+    box-shadow: #666666;
+}
+
+/* 源码部分 以上是通用布局 */
+.pc-box{
+    width: 100%;
+}
+
+.yuanma-list ul{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    /* justify-content: center; */
+    flex-wrap: wrap;
+}
+
+.yuanma-list ul li{
+    display: inline-block;
+    font-family: 'Courier New', Courier, monospace;
+    list-style: none;
+    width: 29%;
+    margin-right: 25px;
+    background-color: #fff;
+    padding: 20px;
+    margin-top: 50px;
+    border-radius: 10px;
+    box-shadow: 4px 0 4px 0 rgba(0,0,0,0.3);
+    transition: box-shadow 0.5s ease;
+    &:hover{
+        box-shadow: 0 0 10px aqua,
+                0 0 6px aqua;
+        filter: brightness(1.05);
+    }
+}
+.yuanma-list ul li h3{
+    /* text-align: center; */
+    &:nth-child(2){
+        color: #666666;
+        font-size: 20px;
+    }
+    &:nth-child(1){
+        text-align: center;
+        font-weight: 700;/*未知原因 此好像没有效果bold依旧如此 */
+        margin-bottom: 10px;
+    }
+}
+.yuanma-list ul li span{
+    color: #bf8e8e;
+    /* 这里有用 */
+    font-weight: bold;
+    margin-left: 1em;
+}
+.yuanma-list ul li p{
+    width: 160px;
+    border-radius: 5px;
+    color: rgb(228, 127, 60);
+    margin: 20px 55%;
+    background-color: #ccc;
+    text-align: center;
+}
+.yuanma-list ul li a{
+    display: inline-block;
+    background-color: #666666;
+    width: 150px;
+    height: 40px;
+    text-align: center;
+    line-height: 40px;
+    color: #eab6b6;
+    margin: 15px 32%;
+    border-radius: 5px;
+    transition: color 0.5s ease;
+    transition: box-shadow 0.5s ease;
+    &:hover{
+        color: aqua;
+        box-shadow: 0px 10px 15px -3px rgba(14, 14, 14, 0.25);
+    }
+}
+.YM .command-title{
+    margin-top: 80px;
+    border-left: 8px solid aqua;
+    /* margin-left: 10px; */
+    padding-left: 20px;
+    margin-bottom: 25px;
+}
