@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/Tools.css">
+	<link rel="icon" href="img/logo.png">
+	<title>Tool-Md5在线加密</title>
+    <link rel="stylesheet" type="text/css" href="css/KanBanNiang/waifu.css"/>
+    <script src="https://cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
+</head>
+<body>
+	<link rel="stylesheet" type="text/css" href="css/KanBanNiang/waifu.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.0.0/crypto-js.min.js"></script>
+    <style>
+        body {
+            background: #f4f4f4;
+            color: #333;
+        }
+        .container {
+            display: inline-block;
+            text-align: center;
+            max-width: 600px;
+            margin-top: 15%;
+            margin-left: 25%;
+            padding: 20px;
+            border-radius: 10px;
+            background: #fff;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        h1 {
+            text-align: center;
+            font-family: 'Courier New', Courier, monospace;
+        }
+        textarea {
+            width: 100%;
+            padding: 10px;
+            margin-top: 10px;
+            margin-bottom: 20px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            box-sizing: border-box;
+        }
+        button {
+            font-family: 'Courier New', Courier, monospace;
+            padding: 10px 20px;
+            background-color: #5cb85c;
+            color: white;
+            border: none;
+            cursor: pointer;
+            margin-right: 10px;
+        }
+        button:hover {
+            background-color: #4cae4c;
+        }
+        #md5Hash {
+            margin-top: 20px;
+            background-color: #f9f9f9;
+        }
+        .info {
+            font-family: 'Courier New', Courier, monospace;
+            margin-top: 20px;
+            padding: 15px;
+            background-color: #e7f4f9;
+            border-left: 4px solid #2196F3;
+        }
+    </style>
+    <link rel="stylesheet" type="text/css" href="css/KanBanNiang/waifu.css">
+	<div class="waifu" id="waifu">
+        <div class="waifu-tips" style="opacity: 1;"></div>
+        <canvas id="live2d" width="280" height="250" class="live2d"></canvas>
+        <div class="waifu-tool">
+            <span class="fui-home"></span>
+            <span class="fui-chat"></span>
+            <span class="fui-eye"></span>
+            <span class="fui-user"></span>
+            <span class="fui-photo"></span>
+            <span class="fui-info-circle"></span>
+            <span class="fui-cross"></span>
+        </div>
+    </div>
+    <div class="page">
+		<!-- 顶部导航 -->
+		<div class="page-top">
+			<a href="index.html">
+				梦蝶个人网站
+			</a>
+			<div class="search">
+				<img src="img/csdn.png" class="search-icon" id="csdn-icon" alt="csdn">
+				<img src="img/sougo.png" alt="" class="search-icon" id="sougo-icon">
+				<img src="img/bing.png" alt="Bing" class="search-icon" id="bing-icon">
+    			<img src="img/baidu.png" alt="Baidu" class="search-icon active" id="baidu-icon">
+    			<input type="text" id="expandable-input" placeholder="Baidu Search..." onkeydown="handleKeyDown(event)">
+			</div>
+			<p>对未来真正的慷慨，是把一切献给现在。----加缪</p>
+		</div>
+		<!-- 内容 -->
+		<div class="page-con">
+			<div class="pc-nav">
+				<div class="nav">
+					<div class="time">
+						<span>Now：</span>
+						<div id="current-time"></div>
+					</div>
+					<a href="index.html">首页</a>
+					<a href="about-main.html">关于我</a>
+					<a href="yuanma-main.html">源码下载</a>
+					<a href="live-spen.html">生活随笔</a>
+					<a href="game.html" class="clicked">更多精彩</a>
+					<h3>每日一言:</h3>
+					<p id="quoteDisplay"></p>
+				</div>
+				<div class="code">
+					<img src="img/Addwe.png" alt="咦?图片被外星人拐走了">
+					<p>扫码 加入我们~~</p>
+				</div>
+			</div>
+            <div class="pc-box">
+                <div class="container" style="width: 1600px;">
+                    <h1 style="font-size: 25px;">在线MD5加密工具</h1>
+                    <h4 style="margin: 15px 0;color: #ccc;font-family: 'Courier New', Courier, monospace;">md5数据不可逆 暴力破解消耗大量资源！</h4>
+                    <textarea id="inputText" placeholder="请输入要加密的内容..." style="resize: vertical; max-height: 100px; border: none;background-color: #f4f3f3;overflow: auto;"></textarea>
+                    <br>
+                    <button onclick="hashMd5()">生成加密数据</button>
+                    <p>MD5加密结果(禁止输入 可当CV皇帝):</p>
+                    <textarea id="md5Hash" style="resize: vertical; max-height: 100px; border: none;outline: none;cursor: not-allowed;overflow: auto;" readonly></textarea>
+                    
+                    <!-- MD5介绍 -->
+                    <div class="info">
+                        <h2 style="font-size: 24px;">关于MD5</h2>
+                        <p>MD5（Message Digest Algorithm 5，消息摘要算法第五版）是一种广泛使用的哈希函数，它可以产生一个128位（16字节）的哈希值，通常用一个32位的十六进制字符串表示。</p>
+                        <p>MD5由Ron Rivest在1991年设计，最初被用来作为一种安全的密码哈希算法。然而，随着时间的推移，MD5被发现存在多种安全漏洞，因此不再推荐用于需要高安全性的场合。</p>
+                        <p>尽管如此，MD5仍然在一些不需要高安全性的场合被使用，例如，检查文件完整性等。</p>
+                    </div>
+                </div>
+                <div class="footer">
+                    <span>全权制作人: 梦蝶</span>
+                    <a href="https://qm.qq.com/q/fC0Uy1gCYM"  target="_blank">联系我们(597569159)</a>
+                    <span>网站已经存在: <span id="uptime"></span></span>
+                    <span>&copy; 2024 梦蝶<a href="about-main.html">mengdie-moon</a>.版权所有 本站提供多种联系方式</span>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="js/frist.js"></script>
+    <script src="js/KanBanNiang/live2d.js"></script>
+    <script src="js/KanBanNiang/waifu-tips.js"></script>
+    <script type="text/javascript">initModel()</script>
+    <link rel="stylesheet" type="text/css" href="css/KanBanNiang/flat-ui.min.css"/>
+    <script>
+        function hashMd5() {
+            var inputText = document.getElementById('inputText').value;
+            var hash = CryptoJS.MD5(inputText).toString();
+            document.getElementById('md5Hash').value = hash;
+        }
+    </script>
+</body>
+</html>

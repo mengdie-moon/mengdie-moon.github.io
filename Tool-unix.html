@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/Tools.css">
+	  <link rel="icon" href="img/logo.png">
+    <link rel="stylesheet" type="text/css" href="css/KanBanNiang/waifu.css"/>
+    <script src="https://cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
+	  <title>Tool-在线时间戳转换</title>
+</head>
+<body>
+    <style>
+        body {
+          background-color: #f4f4f4;
+          color: #333;
+          padding: 20px;
+          margin: 0;
+        }
+        .container {
+          max-width: 600px;
+          margin: 10% auto;
+          background: #fff;
+          border-radius: 10px;
+          box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+          padding: 20px;
+            font-family: 'Courier New', Courier, monospace;
+        }
+        h2 {
+          text-align: center;
+          color: #5a5a5a;
+        }
+        input, textarea, button {
+          width: 100%;
+          padding: 10px;
+          margin-top: 10px;
+          border: 1px solid #ddd;
+          border-radius: 4px;
+          box-sizing: border-box;
+          outline: none;
+        }
+        button {
+          background-color: rgba(0,0,0,0.4);
+          color: white;
+          border: none;
+          cursor: pointer;
+          font-size: 16px;
+          transition: box-shadow 0.3s ease;
+        }
+        button:hover {
+            background-color: #333;
+            box-shadow: 0px 10px 15px -3px rgba(68,68,68,0.25);
+        }
+        textarea {
+          max-height: 80px;
+          font-family: 'Courier New', Courier, monospace;
+          resize: vertical;
+        }
+        label {
+          display: block;
+          margin-top: 20px;
+          margin-bottom: 5px;
+          font-weight: bold;
+        }
+        .readonly{
+            cursor: not-allowed;
+        }
+    </style>
+    <link rel="stylesheet" type="text/css" href="css/KanBanNiang/waifu.css">
+    <div class="waifu" id="waifu">
+          <div class="waifu-tips" style="opacity: 1;"></div>
+          <canvas id="live2d" width="280" height="250" class="live2d"></canvas>
+          <div class="waifu-tool">
+              <span class="fui-home"></span>
+              <span class="fui-chat"></span>
+              <span class="fui-eye"></span>
+              <span class="fui-user"></span>
+              <span class="fui-photo"></span>
+              <span class="fui-info-circle"></span>
+              <span class="fui-cross"></span>
+          </div>
+    </div>
+    <div class="page">
+		<!-- 顶部导航 -->
+		<div class="page-top">
+			<a href="index.html">
+				梦蝶个人网站
+			</a>
+			<div class="search">
+				<img src="img/csdn.png" class="search-icon" id="csdn-icon" alt="csdn">
+				<img src="img/sougo.png" alt="" class="search-icon" id="sougo-icon">
+				<img src="img/bing.png" alt="Bing" class="search-icon" id="bing-icon">
+    			<img src="img/baidu.png" alt="Baidu" class="search-icon active" id="baidu-icon">
+    			<input type="text" id="expandable-input" placeholder="Baidu Search..." onkeydown="handleKeyDown(event)">
+			</div>
+			<p>对未来真正的慷慨，是把一切献给现在。----加缪</p>
+		</div>
+		<!-- 内容 -->
+		<div class="page-con">
+			<div class="pc-nav">
+				<div class="nav">
+					<div class="time">
+						<span>Now：</span>
+						<div id="current-time"></div>
+					</div>
+					<a href="index.html">首页</a>
+					<a href="about-main.html">关于我</a>
+					<a href="yuanma-main.html">源码下载</a>
+					<a href="live-spen.html">生活随笔</a>
+					<a href="game.html"  class="clicked">更多精彩</a>
+					<h3>每日一言:</h3>
+					<p id="quoteDisplay"></p>
+				</div>
+				<div class="code">
+					<img src="img/Addwe.png" alt="咦?图片被外星人拐走了">
+					<p>扫码 加入我们~~</p>
+				</div>
+			</div>
+            <div class="pc-box">
+                <div class="container">
+                    <h2>时间戳转换器</h2>
+                    <div>
+                      <label for="timestampInput">输入UNIX时间戳：</label>
+                      <input type="text" id="timestampInput" placeholder="请输入UNIX时间戳...">
+                      <button onclick="convertTimestampToDateTime()">转换为日期/时间</button>
+                      <textarea class="readonly" id="dateTimeOutput" placeholder="时间为..." readonly></textarea>
+                    </div>
+                  
+                    <div>
+                      <label for="dateInput">输入日期和时间 (格式：YYYY-MM-DD HH:MM:SS)：</label>
+                      <input type="text" id="dateInput" placeholder="请输入日期和时间...">
+                      <button onclick="convertDateTimeToTimestamp()">转换为时间戳</button>
+                      <textarea class="readonly" id="timestampOutput" placeholder="时间戳为..." readonly></textarea>
+                    </div>
+                </div>
+                <div class="footer">
+                  <span>全权制作人: 梦蝶</span>
+                  <a href="https://qm.qq.com/q/fC0Uy1gCYM"  target="_blank">联系我们(597569159)</a>
+                  <span>网站已经存在: <span id="uptime"></span></span>
+                  <span>&copy; 2024 梦蝶<a href="about-main.html">mengdie-moon</a>.版权所有 本站提供多种联系方式</span>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="js/frist.js"></script>
+    <script src="js/Tools.js"></script>
+    <script src="js/KanBanNiang/live2d.js"></script>
+    <script src="js/KanBanNiang/waifu-tips.js"></script>
+    <script type="text/javascript">initModel()</script>
+
+    <link rel="stylesheet" type="text/css" href="css/KanBanNiang/flat-ui.min.css"/>
+</body>
+</html>

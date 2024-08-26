@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/Tools.css">
+	<link rel="icon" href="img/logo.png">
+	<link rel="stylesheet" type="text/css" href="css/KanBanNiang/waifu.css"/>
+    <script src="https://cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
+	<title>Tool-在线AES加密</title>
+</head>
+<body>
+	<link rel="stylesheet" type="text/css" href="css/KanBanNiang/waifu.css">
+	<div class="waifu" id="waifu">
+        <div class="waifu-tips" style="opacity: 1;"></div>
+        <canvas id="live2d" width="280" height="250" class="live2d"></canvas>
+        <div class="waifu-tool">
+            <span class="fui-home"></span>
+            <span class="fui-chat"></span>
+            <span class="fui-eye"></span>
+            <span class="fui-user"></span>
+            <span class="fui-photo"></span>
+            <span class="fui-info-circle"></span>
+            <span class="fui-cross"></span>
+        </div>
+    </div>
+	<style>
+		body {
+		font-family: 'Arial', sans-serif;
+		background-color: #f4f4f4;
+		margin: 0;
+		padding: 20px;
+		color: #333;
+		}
+	
+		h2 {
+		color: #444;
+		}
+	
+		.container {
+			/* display: inline-block; */
+            text-align: center;
+			max-width: 600px;
+            margin-top: 15%;
+            margin-left: 25%;
+            padding: 20px;
+            border-radius: 10px;
+            background: #fff;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+		}
+	
+		textarea {
+		width: 90%;
+		padding: 10px;
+		margin-bottom: 10px;
+		border: 1px solid #ddd;
+		border-radius: 4px;
+		resize: vertical;
+		}
+	
+		button {
+		padding: 10px 20px;
+		margin-right: 10px;
+		border: none;
+		border-radius: 4px;
+		background-color: #5cb85c;
+		color: white;
+		cursor: pointer;
+		outline: none;
+		}
+	
+		button:hover {
+		background-color: #4cae4c;
+		}
+	
+		button:active {
+		background-color: #398439;
+		}
+	</style>
+    <div class="page">
+		<!-- 顶部导航 -->
+		<div class="page-top">
+			<a href="index.html">
+				梦蝶个人网站
+			</a>
+			<div class="search">
+				<img src="img/csdn.png" class="search-icon" id="csdn-icon" alt="csdn">
+				<img src="img/sougo.png" alt="" class="search-icon" id="sougo-icon">
+				<img src="img/bing.png" alt="Bing" class="search-icon" id="bing-icon">
+    			<img src="img/baidu.png" alt="Baidu" class="search-icon active" id="baidu-icon">
+    			<input type="text" id="expandable-input" placeholder="Baidu Search..." onkeydown="handleKeyDown(event)">
+			</div>
+			<p>对未来真正的慷慨，是把一切献给现在。----加缪</p>
+		</div>
+		<!-- 内容 -->
+		<div class="page-con">
+			<div class="pc-nav">
+				<div class="nav">
+					<div class="time">
+						<span>Now：</span>
+						<div id="current-time"></div>
+					</div>
+					<a href="index.html">首页</a>
+					<a href="about-main.html">关于我</a>
+					<a href="yuanma-main.html">源码下载</a>
+					<a href="live-spen.html">生活随笔</a>
+					<a href="game.html"  class="clicked">更多精彩</a>
+					<h3>每日一言:</h3>
+					<p id="quoteDisplay"></p>
+				</div>
+				<div class="code">
+					<img src="img/Addwe.png" alt="咦?图片被外星人拐走了">
+					<p>扫码 加入我们~~</p>
+				</div>
+			</div>
+            <div class="pc-box">
+				<div class="container">
+					<h2 style="margin: 15px 0;color: #ccc;font-family: 'Courier New', Courier, monospace;">Base64加密解密</h2>
+					<textarea id="inputText" rows="4" placeholder="输入文本..." style="resize: vertical; max-height: 100px; border: none;background-color: #f4f3f3;overflow: auto;"></textarea><br><br>
+					<button onclick="encrypt()">加密</button>
+					<button onclick="decrypt()">解密</button><br><br>
+					<textarea id="outputText" rows="4" placeholder="输出结果..." style="resize: vertical; max-height: 100px; border: none;background-color: #f4f3f3;overflow: auto;outline: none;cursor: not-allowed;" readonly></textarea>
+				</div>
+				<div class="footer">
+                    <span>全权制作人: 梦蝶</span>
+                    <a href="https://qm.qq.com/q/fC0Uy1gCYM"  target="_blank">联系我们(597569159)</a>
+                    <span>网站已经存在: <span id="uptime"></span></span>
+                    <span>&copy; 2024 梦蝶<a href="about-main.html">mengdie-moon</a>.版权所有 本站提供多种联系方式</span>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="js/frist.js"></script>
+    <script src="js/Tools.js"></script>
+	<script src="js/KanBanNiang/live2d.js"></script>
+    <script src="js/KanBanNiang/waifu-tips.js"></script>
+    <script type="text/javascript">initModel()</script>
+
+    <link rel="stylesheet" type="text/css" href="css/KanBanNiang/flat-ui.min.css"/>
+</body>
+</html>
