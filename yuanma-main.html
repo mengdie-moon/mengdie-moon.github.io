@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="img/logo.png">
+	<link rel="stylesheet" href="css/yuanma-main.css">
+	<link rel="stylesheet" type="text/css" href="css/KanBanNiang/waifu.css"/>
+    <script src="https://cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11.3.0/dist/sweetalert2.min.css">
+	<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.3.0/dist/sweetalert2.min.js"></script>
+    <title>厌与星的世界-源码下载</title>
+</head>
+<body>
+    <link rel="stylesheet" type="text/css" href="css/KanBanNiang/waifu.css">
+	<div class="waifu" id="waifu">
+        <div class="waifu-tips" style="opacity: 1;"></div>
+        <canvas id="live2d" width="280" height="250" class="live2d"></canvas>
+        <div class="waifu-tool">
+            <span class="fui-home"></span>
+            <span class="fui-chat"></span>
+            <span class="fui-eye"></span>
+            <span class="fui-user"></span>
+            <span class="fui-photo"></span>
+            <span class="fui-info-circle"></span>
+            <span class="fui-cross"></span>
+        </div>
+    </div>
+    <div class="day">
+		<div class="page">
+			<!-- 顶部导航 -->
+			<div class="page-top">
+				<a href="index.html">
+					梦蝶个人网站
+				</a>
+				<div class="search">
+					<img src="img/csdn.png" class="search-icon" id="csdn-icon" alt="csdn">
+					<img src="img/sougo.png" alt="" class="search-icon" id="sougo-icon">
+					<img src="img/bing.png" alt="Bing" class="search-icon" id="bing-icon">
+					<img src="img/baidu.png" alt="Baidu" class="search-icon active" id="baidu-icon">
+					<input type="text" id="expandable-input" placeholder="Baidu Search..." onkeydown="handleKeyDown(event)">
+				</div>
+				<p>对未来真正的慷慨，是把一切献给现在。----加缪</p>
+			</div>
+			<!-- 内容 -->
+			<div class="page-con">
+				<div class="pc-nav">
+					<div class="nav">
+						<div class="time">
+							<span>Now：</span>
+							<div id="current-time"></div>
+						</div>
+						<a href="index.html">首页</a>
+						<a href="about-main.html">关于我</a>
+						<a href="yuanma-main.html" class="clicked">源码下载</a>
+						<a href="live-spen.html">生活随笔</a>
+						<a href="game.html">更多精彩</a>
+						<h3>每日一言:</h3>
+						<p id="quoteDisplay"></p>
+					</div>
+					<div class="code">
+						<img src="img/Addwe.png" alt="咦?图片被外星人拐走了">
+						<p>扫码 加入我们~~</p>
+					</div>
+				</div>
+				<div class="pc-box">
+					<div class="YM" style="font-family: 'Courier New', Courier, monospace;">
+						<h3 class="command-title" style="font-size: 25px;">源码下载(暂不分区)</h3>
+						<h4 style="color: rgb(113, 108, 101);">注意❗安装本站源码包含了此页所有源码！</h4>
+						<h5 style="color: #ccc; font-size: 13px; display: inline-block;">90%本人编写分享(来源于网络部分侵权必删)--没有图片是因为加载太慢占用资源多!所以采用文字描述</h5>
+						<a href="ym/mengdie-moon.zip" download="">
+							<span>安装本站源码</span>
+						</a>
+						<div class="ym-show">
+							<div class="yuanma-list">
+								<ul>
+									<li>
+										<h3>❤爱心代码❤</h3>
+										<h3>描述: </h3>
+										<span>这是一个很简单的打印爱心代码~有对象的有福啦</span>
+										<p>#python #爱心代码</p>
+										<a href="ym/爱心代码.py" download="">点我下载</a>
+									</li>
+									<li>
+										<h3>随机点名</h3>
+										<h3>描述: </h3>
+										<span>这是一个可以随机点名字的网页程序 再也不担心不知道叫谁了</span>
+										<p>#web #random</p>
+										<a href="ym/随机点名.zip" download="">点我下载</a>
+									</li>
+									<li>
+										<h3>二叉树(注释版)</h3>
+										<h3>描述: </h3>
+										<span>Coding算法之美-二叉树实例值得一看 树数据结构的相关知识哦</span>
+										<p>#c语言 #算法</p>
+										<a href="ym/二叉树实例.c" download="">点我下载</a>
+									</li>
+									<li>
+										<h3>douban-Top评分获取</h3>
+										<h3>描述: </h3>
+										<span style="display: block; margin-bottom: 10px;">免责声明:出了事别找我请自负-不要恶意对他人服务器造成影响不然后果自负-不要乱传别人出事了后果自负-使用出事了与我无关本人不负责-下载使用将默认同意免责声明</span>
+										<span>网络爬虫douban电影信息(部分Top前几百)</span>
+										<p>#requests #py</p>
+										<a href="ym/爬取豆瓣评分.zip" download="">点我下载</a>
+									</li>
+									<li>
+										<h3>5000-小说获取</h3>
+										<h3>描述: </h3>
+										<span style="display: block; margin-bottom: 10px;">免责声明:出了事别找我请自负-不要恶意对他人服务器造成影响不然后果自负-不要乱传别人出事了后果自负-使用出事了与我无关本人不负责-下载使用将默认同意免责声明</span>
+										<span>网络爬虫5000小说内容(可当模板用了xpath)</span>
+										<p>#requests #py</p>
+										<a href="ym/5000yan.zip" download="">点我下载</a>
+									</li>
+									<li>
+										<h3>requests-模板</h3>
+										<h3>描述: </h3>
+										<span style="display: block; margin-bottom: 10px;">免责声明:出了事别找我请自负-不要恶意对他人服务器造成影响不然后果自负-不要乱传别人出事了后果自负-使用出事了与我无关本人不负责-下载使用将默认同意免责声明</span>
+										<span>这是一个py网络爬虫模板哦~</span>
+										<p>#requests #py</p>
+										<a href="ym/模板.zip" download="">点我下载</a>
+									</li>
+									<li>
+										<h3>GUI-学生成绩管理系统(源码)</h3>
+										<h3>描述: </h3>
+										<span>基于QT6的学生成绩管理系统 提供了文件编写和文件读取查看 但固定了格式！需要注意的是没有文件不能进行操作</span>
+										<p>#QT #c++</p>
+										<a href="ym/gui_students.zip" download="">点我下载</a>
+									</li>
+									<li>
+										<h3>GUI-记事本(源码)</h3>
+										<h3>描述: </h3>
+										<span>基于QT6的记事本小型项目 实现了windows系统自带记事本的一部分(没有完全实现)</span>
+										<p>#QT #c++</p>
+										<a href="ym/notebooks.zip" download="">点我下载</a>
+									</li>
+									<li>
+										<h3>GUI-记事本(可执行文件)</h3>
+										<h3>描述: </h3>
+										<span>基于QT6的记事本小型项目 实现了windows系统自带记事本的一部分(没有完全实现) 下载解压可以直接执行</span>
+										<p>#QT #c++</p>
+										<a href="ym/notebooks_copy.zip" download="">点我下载</a>
+									</li>
+									<li>
+										<h3>Thread-简易线程池示例</h3>
+										<h3>描述: </h3>
+										<span>c++编写的简易线程池适用于初学多线程的人看</span>
+										<p>#thread #c++</p>
+										<a href="ym/thread-pool.cpp" download="">点我下载</a>
+									</li>
+									<li>
+										<h3>ATM-黑马ATM机案例</h3>
+										<h3>描述: </h3>
+										<span>根据黑马提供的ATM需求提供(只有源文件)</span>
+										<p>#it黑马 #Java</p>
+										<a href="ym/ATM.zip" download="">点我下载</a>
+									</li>
+									<li>
+										<h3>3D-来自图形库的3D效果</h3>
+										<h3>描述: </h3>
+										<span>震撼的程序不用多说也会自己闪闪发光！3D效果视觉体验十足</span>
+										<p>#3D #c</p>
+										<a href="ym/3D.zip" download="">点我下载</a>
+									</li>
+								</ul>
+							</div>
+						</div>
+					</div>
+					<div id="footer">
+						<span>全权制作人: 梦蝶</span>
+						<a href="https://qm.qq.com/q/fC0Uy1gCYM"  target="_blank">联系我们(597569159)</a>
+						<span>网站已经存在: <span id="uptime"></span></span>
+						<span>&copy; 2024 梦蝶<a href="about-main.html">mengdie-moon</a>.版权所有 本站提供多种联系方式</span>
+					</div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="js/frist.js"></script>
+    <script src="js/KanBanNiang/live2d.js"></script>
+    <script src="js/KanBanNiang/waifu-tips.js"></script>
+    <script type="text/javascript">initModel()</script>
+    <link rel="stylesheet" type="text/css" href="css/KanBanNiang/flat-ui.min.css"/>
+</body>
+</html>
