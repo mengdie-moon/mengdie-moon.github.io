@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/About-LCB.css">
+	<link rel="icon" href="img/logo.png">
+	<link rel="stylesheet" type="text/css" href="css/KanBanNiang/waifu.css"/>
+    <script src="https://cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11.3.0/dist/sweetalert2.min.css">
+	<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.3.0/dist/sweetalert2.min.js"></script>
+	<title>厌与星的世界-里程碑</title>
+</head>
+<body>
+    <link rel="stylesheet" type="text/css" href="css/KanBanNiang/waifu.css">
+	<div class="waifu" id="waifu">
+        <div class="waifu-tips" style="opacity: 1;"></div>
+        <canvas id="live2d" width="280" height="250" class="live2d"></canvas>
+        <div class="waifu-tool">
+            <span class="fui-home"></span>
+            <span class="fui-chat"></span>
+            <span class="fui-eye"></span>
+            <span class="fui-user"></span>
+            <span class="fui-photo"></span>
+            <span class="fui-info-circle"></span>
+            <span class="fui-cross"></span>
+        </div>
+    </div>
+	<div class="day">
+		<div class="page">
+			<!-- 顶部导航 -->
+			<div class="page-top">
+				<a href="index.html">
+					梦蝶个人网站
+				</a>
+				<div class="search">
+					<img src="img/csdn.png" class="search-icon" id="csdn-icon" alt="csdn">
+					<img src="img/sougo.png" alt="" class="search-icon" id="sougo-icon">
+					<img src="img/bing.png" alt="Bing" class="search-icon" id="bing-icon">
+					<img src="img/baidu.png" alt="Baidu" class="search-icon active" id="baidu-icon">
+					<input type="text" id="expandable-input" placeholder="Baidu Search..." onkeydown="handleKeyDown(event)">
+				</div>
+				<p>对未来真正的慷慨，是把一切献给现在。----加缪</p>
+			</div>
+			<!-- 内容 -->
+			<div class="page-con">
+				<div class="pc-nav">
+					<div class="nav">
+						<div class="time">
+							<span>Now：</span>
+							<div id="current-time"></div>
+						</div>
+						<a href="index.html">首页</a>
+						<a href="about-main.html">关于我</a>
+						<a href="yuanma-main.html">源码下载</a>
+						<a href="live-spen.html">生活随笔</a>
+						<a href="game.html">更多精彩</a>
+						<h3>每日一言:</h3>
+						<p id="quoteDisplay"></p>
+					</div>
+					<div class="code">
+						<img src="img/Addwe.png" alt="咦?图片被外星人拐走了">
+						<p>扫码 加入我们~~</p>
+					</div>
+				</div>
+                <div class="pc-box">
+                    <div class="vertical-line-container">
+                        <div class="vertical-line"></div>
+                        <div class="dot-container" style="top: 6%;"><div class="dot"></div><div class="text">2024年寒假 第一份前端网站大作业被完善 这也是梦的开始 命运从此刻改变 本站是基于第一份作业的不满意而重新制作</div></div>
+                        <div class="dot-container" style="top: 12%;"><div class="dot"></div><div class="text">2024.8月初 该网站的基本雏形诞生了 一位懵懂少年也开始了造梦之路 “逐梦如蝶，自在飞翔。” 旨于自由 不止于逐梦</div></div>
+                        <div class="dot-container" style="top: 18%;"><div class="dot"></div><div class="text">2024.8月中旬 网站总体搭建完成 各部分的模板编写完工 但仍然有一些不足</div></div>
+                        <div class="dot-container" style="top: 24%;"><div class="dot"></div><div class="text">2024.8月中旬 网站加入了更好看的效果：鼠标美化,看板娘加入,搜索完善,加入了一系列的措施</div></div>
+                        <div class="dot-container" style="top: 30%;"><div class="dot"></div><div class="text">2024.8月中旬 上传至Github社区 成为了Github的一员(但是是垃圾) 上传至Github社区只是因为没💴买域名服务器</div></div>
+                        <div class="dot-container" style="top: 36%;"><div class="dot"></div><div class="text">2024.8月中旬 加入了鼠标拖尾效果及其回到顶部功能(一大遗憾就是没有完成昼夜模式)</div></div>
+                        <div class="dot-container" style="top: 42%;"><div class="dot"></div><div class="text">2024.8月中旬 修复了“每日一言”部分重复问题</div></div>
+                        <div class="dot-container" style="top: 48%;"><div class="dot"></div><div class="text">2024.8月中旬 加入了伪*版权信息 及其运行时间</div></div>
+                        <div class="dot-container" style="top: 54%;"><div class="dot"></div><div class="text">2024.8月中下旬 加入了csdn站内搜索 及其在首页更新“更多精彩”一栏介绍</div></div>
+                        <div class="dot-container" style="top: 60%;"><div class="dot"></div><div class="text">2024.8月中下旬 完善了站内打开控制台的触发效果并进行测试</div></div>
+                        <div class="dot-container" style="top: 66%;"><div class="dot"></div><div class="text">2024.9月初 加入了“里程碑”部分(8月末朕在补作业)</div></div>
+                        <div class="dot-container" style="top: 72%;"><div class="dot"></div><div class="text">计划未来更新技术文章 加入更多实用网站在“更多精彩”</div></div>
+                        <div class="dot-container" style="top: 78%;"><div class="dot"></div><div class="text">未(未来可期)</div></div>
+                        <div class="dot-container" style="top: 84%;"><div class="dot"></div><div class="text">完(完名全节)</div></div>
+                        <div class="dot-container" style="top: 90%;"><div class="dot"></div><div class="text">待(待月西厢)</div></div>
+                        <div class="dot-container" style="top: 96%;"><div class="dot"></div><div class="text">序(续貂之作)</div></div>
+                    </div>
+                </div>
+                <div id="footer">
+                    <span>全权制作人: 梦蝶</span>
+                    <a href="https://qm.qq.com/q/fC0Uy1gCYM"  target="_blank">联系我们(597569159)</a>
+                    <span>网站已经存在: <span id="uptime"></span></span>
+                    <span>&copy; 2024 梦蝶<a href="about-main.html">mengdie-moon</a>.版权所有 本站提供多种联系方式</span>
+                </div>
+                <script src="js/frist.js"></script>
+                <script src="js/KanBanNiang/live2d.js"></script>
+                <script src="js/KanBanNiang/waifu-tips.js"></script>
+                <script type="text/javascript">initModel()</script>
+                <link rel="stylesheet" type="text/css" href="css/KanBanNiang/flat-ui.min.css"/>
+                <script>
+                    const dotContainers = document.querySelectorAll('.dot-container');
+                    dotContainers.forEach((dotContainer, index) => {
+                      dotContainer.style.animationDelay = `${index * 0.5}s`;
+                    });
+                </script>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/game.css">
+	<link rel="icon" href="img/logo.png">
+	<link rel="stylesheet" type="text/css" href="css/KanBanNiang/waifu.css"/>
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11.3.0/dist/sweetalert2.min.css">
+	<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.3.0/dist/sweetalert2.min.js"></script>
+    <script src="https://cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
+	<title>厌与星的世界-更多精彩</title>
+</head>
+<body>
+	<style>
+		.btn{
+			padding: 10px 20px;
+			background-color: #5cb85c;
+			color: white;
+			border: none;
+			border-radius: 4px;
+			cursor: pointer;
+			transition: background-color 0.3s;
+			&::hover {
+				background-color: #4cae4c;
+			}
+		}
+		#md5Result {
+			color: #0066cc;
+			font-weight: bold;
+		}
+	</style>
+	<link rel="stylesheet" type="text/css" href="css/KanBanNiang/waifu.css">
+	<div class="waifu" id="waifu">
+        <div class="waifu-tips" style="opacity: 1;"></div>
+        <canvas id="live2d" width="280" height="250" class="live2d"></canvas>
+        <div class="waifu-tool">
+            <span class="fui-home"></span>
+            <span class="fui-chat"></span>
+            <span class="fui-eye"></span>
+            <span class="fui-user"></span>
+            <span class="fui-photo"></span>
+            <span class="fui-info-circle"></span>
+            <span class="fui-cross"></span>
+        </div>
+    </div>
+    <div class="page">
+		<!-- 顶部导航 -->
+		<div class="page-top">
+			<a href="index.html">
+				梦蝶个人网站
+			</a>
+			<div class="search">
+				<img src="img/csdn.png" class="search-icon" id="csdn-icon" alt="csdn">
+				<img src="img/sougo.png" alt="" class="search-icon" id="sougo-icon">
+				<img src="img/bing.png" alt="Bing" class="search-icon" id="bing-icon">
+    			<img src="img/baidu.png" alt="Baidu" class="search-icon active" id="baidu-icon">
+    			<input type="text" id="expandable-input" placeholder="Baidu Search..." onkeydown="handleKeyDown(event)">
+			</div>
+			<p>对未来真正的慷慨，是把一切献给现在。----加缪</p>
+		</div>
+		<!-- 内容 -->
+		<div class="page-con">
+			<div class="pc-nav">
+				<div class="nav">
+					<div class="time">
+						<span>Now：</span>
+						<div id="current-time"></div>
+					</div>
+					<a href="index.html">首页</a>
+					<a href="about-main.html">关于我</a>
+					<a href="yuanma-main.html">源码下载</a>
+					<a href="live-spen.html">生活随笔</a>
+					<a href="game.html"  class="clicked">更多精彩</a>
+					<h3>每日一言:</h3>
+					<p id="quoteDisplay"></p>
+				</div>
+				<div class="code">
+					<img src="img/Addwe.png" alt="咦?图片被外星人拐走了">
+					<p>扫码 加入我们~~</p>
+				</div>
+			</div>
+            <div class="pc-box">
+                <div class="Game">
+					<!-- 注意 这里命名会有些问题 但是问题不大！ -->
+                    <h3 class="Game-show">类型：Game</h3>
+					<div class="game-show">
+						<div class="game-list">
+							<ul>
+								<li>
+									<img src="img/game-5.png" alt="">
+									<div class="game-con">
+										<h4>Game-“快和AI来一局酣畅淋漓的五子棋吧”</h4>
+										<a href="more-game5.html">传送门</a>
+									</div>
+								</li>
+								<li>
+									<img src="img/game-tan.png" alt="">
+									<div class="game-con">
+										<h4>Game-“来控制你的小蛇拿下最高分吧！”</h4>
+										<a href="game-tan.html">传送门</a>
+									</div>
+								</li>
+								<li>
+									<img src="img/game-boom.png" alt="">
+									<div class="game-con">
+										<h4>Game-“赌狗游戏-快来看看你的运气吧😏”</h4>
+										<a href="game-boom.html">传送门</a>
+									</div>
+								</li>
+							</ul>
+						</div>
+					</div>
+					<h3 class="Game-show">类型：Tool</h3>
+					<div class="game-show">
+						<div class="game-list">
+							<ul>
+								<li>
+									<div class="game-con">
+										<h4>Tool-“在线MD5加密工具”</h4>
+										<a href="Tool-md5.html">传送门</a>
+									</div>
+								</li>
+								<li>
+									<div class="game-con">
+										<h4>Tool-“在线Base64加密工具”</h4>
+										<a href="Tool-base64.html">传送门</a>
+									</div>
+								</li>
+								<li>
+									<div class="game-con">
+										<h4>Tool-“在线随机密码生成工具”</h4>
+										<a href="Tool-password.html">传送门</a>
+									</div>
+								</li>
+								<li>
+									<div class="game-con">
+										<h4>Tool-“在线时间戳转换工具”</h4>
+										<a href="Tool-unix.html">传送门</a>
+									</div>
+								</li>
+								<li style="text-align: center;">
+									<img src="img/chatpgt.png" style="width: 20px; height: 20px; display: inline-block;" alt="">
+									<div class="game-con">
+										<span>chatpgt--功能丰富,智能化,易用性强的AI</span>
+										<a href="https://chat.openai.com/" target="_blank">传送门</a>
+									</div>
+								</li>
+								<li style="text-align: center;">
+									<img src="img/mubu.png" style="width: 20px; height: 20px; display: inline-block;" alt="">
+									<div class="game-con">
+										<span>幕布--极简大纲笔记，一键生成思维导图</span>
+										<a href="https://mubu.com/home" target="_blank">传送门</a>
+									</div>
+								</li>
+								<li style="text-align: center;">
+									<img src="img/30Tool.png" style="width: 20px; height: 20px; display: inline-block;" alt="">
+									<div class="game-con">
+										<span>30工具网--这可能是最好的工具网 让工具回归工具</span>
+										<a href="https://www.30aitool.com/" target="_blank">传送门</a>
+									</div>
+								</li>
+								<li style="text-align: center; background-color: rgb(135, 243, 243);">
+									<img src="img/iconfont.png" style="width: 80px; margin-left: auto; height: 20px; display: inline-block;" alt="">
+									<div class="game-con">
+										<span>阿里巴巴矢量图标库--超多图标（白色背景会影响logo）</span>
+										<a href="https://www.iconfont.cn/" target="_blank">传送门</a>
+									</div>
+								</li>
+								<li style="text-align: center;">
+									<img src="img/chmlfrp.png" style="width: 20px; height: 20px; display: inline-block;" alt="">
+									<div class="game-con">
+										<span>Chmlfrp--内网穿透-免费高速稳定!</span>
+										<a href="https://www.chmlfrp.cn/" target="_blank">传送门</a>
+									</div>
+								</li>
+							</ul>
+						</div>
+					</div>
+                </div>
+				<div class="footer">
+                    <span>全权制作人: 梦蝶</span>
+                    <a href="https://qm.qq.com/q/fC0Uy1gCYM"  target="_blank">联系我们(597569159)</a>
+                    <span>网站已经存在: <span id="uptime"></span></span>
+                    <span>&copy; 2024 梦蝶<a href="about-main.html">mengdie-moon</a>.版权所有 本站提供多种联系方式</span>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="js/frist.js"></script>
+	<script src="js/Tools.js"></script>
+	<script src="js/KanBanNiang/live2d.js"></script>
+    <script src="js/KanBanNiang/waifu-tips.js"></script>
+    <script type="text/javascript">initModel()</script>
+
+    <link rel="stylesheet" type="text/css" href="css/KanBanNiang/flat-ui.min.css"/>
+</body>
+</html>

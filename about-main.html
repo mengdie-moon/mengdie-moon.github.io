@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/about-main.css">
+	<link rel="icon" href="img/logo.png">
+	<link rel="stylesheet" type="text/css" href="css/KanBanNiang/waifu.css"/>
+    <script src="https://cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11.3.0/dist/sweetalert2.min.css">
+	<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.3.0/dist/sweetalert2.min.js"></script>
+	<title>厌与星的世界-关于我</title>
+</head>
+<body>
+	<link rel="stylesheet" type="text/css" href="css/KanBanNiang/waifu.css">
+	<div class="waifu" id="waifu">
+        <div class="waifu-tips" style="opacity: 1;"></div>
+        <canvas id="live2d" width="280" height="250" class="live2d"></canvas>
+        <div class="waifu-tool">
+            <span class="fui-home"></span>
+            <span class="fui-chat"></span>
+            <span class="fui-eye"></span>
+            <span class="fui-user"></span>
+            <span class="fui-photo"></span>
+            <span class="fui-info-circle"></span>
+            <span class="fui-cross"></span>
+        </div>
+    </div>
+	<div class="day">
+		<div class="page">
+			<!-- 顶部导航 -->
+			<div class="page-top">
+				<a href="index.html">
+					梦蝶个人网站
+				</a>
+				<div class="search">
+					<img src="img/csdn.png" class="search-icon" id="csdn-icon" alt="csdn">
+					<img src="img/sougo.png" alt="" class="search-icon" id="sougo-icon">
+					<img src="img/bing.png" alt="Bing" class="search-icon" id="bing-icon">
+					<img src="img/baidu.png" alt="Baidu" class="search-icon active" id="baidu-icon">
+					<input type="text" id="expandable-input" placeholder="Baidu Search..." onkeydown="handleKeyDown(event)">
+				</div>
+				<p>对未来真正的慷慨，是把一切献给现在。----加缪</p>
+			</div>
+			<!-- 内容 -->
+			<div class="page-con">
+				<div class="pc-nav">
+					<div class="nav">
+						<div class="time">
+							<span>Now：</span>
+							<div id="current-time"></div>
+						</div>
+						<a href="index.html">首页</a>
+						<a href="about-main.html" class="clicked">关于我</a>
+						<a href="yuanma-main.html">源码下载</a>
+						<a href="live-spen.html">生活随笔</a>
+						<a href="game.html">更多精彩</a>
+						<h3>每日一言:</h3>
+						<p id="quoteDisplay"></p>
+					</div>
+					<div class="code">
+						<img src="img/Addwe.png" alt="咦?图片被外星人拐走了">
+						<p>扫码 加入我们~~</p>
+					</div>
+				</div>
+				<div class="pc-box">
+					<div class="header">
+						<h2 style="color: rgba(0,0,0,0.7);">关于俺！</h2>
+						<h3 style="font-size: 15px;color: #999999;">小声哔哔一下--静态网站太累辣！ 加群&ks涨热度就是支持！</h3>
+						<h3 style="font-size: 15px;color: #999999;">嘿携梦少年!请你当我粉粉怎么样!</h3>
+						<button type="button" onclick="button_toks()" title="转跳网页无内容刷新一下就可以了">♥粉粉♥</button>
+					</div>
+					<hr style="margin: 30px 0;">
+					<div class="body">
+						<h3 style="font-size: 18px;color: #999999;">窝是一位正在划水的菜鸡网民</h3>
+						<div class="myinfo" style="font-family: 'Courier New', Courier, monospace;">
+							<p class="name">昵称：梦蝶</p>
+							<hr>
+							<p class="qq">QQ: 3257053519 <span style="color: black;">"有志同道合的小宝子们可以加me! 验证消息：‘本站网址+目的’，我就会通过的！"</span></p>
+							<hr>
+							<p class="qq-group">QQ裙: 597569159 <span style="color: black;">"请用大号加群哦~ 嘻嘻✌"</span></p>
+							<hr>
+							<p class="laught">语言：c++,c,Java,python,html,css,Javascript(都会一一一一一一一一点点)</p>
+							<hr>
+							<p class="wish">想法：专心学c++,其次Java,前端,python....(感觉py以后大学会上课)</p>
+							<hr>
+							<p class="my">个人阐述: 菜鸡网民一个 连程序员都不算是</p>
+							<hr>
+							<p class="url">github: 下面有我账号的传送门~But没有任何项目哦 以后有好玩的项目会上传到那的!</p>
+							<hr>
+						</div>
+					</div>
+					<div class="footer" id="lianxi">
+						<h3 style="font-size: 25px;color: #999999;">点点他们呗~~</h3>
+						<button type="button" onclick="buton_toqqgroup()">
+							<img src="img/QQ-group.png" alt="">	
+						</button>
+						<button type="button" onclick="buton_togithub()">
+							<img src="img/github.png" alt="">
+						</button>
+						<button type="button" onclick="button_toks()">
+							<img src="img/ks.png" alt="">	
+						</button>
+						<hr>
+						<h1 style="font-size: 15px; color: #999999;text-align: center;">距离 <span id="target-year"></span> 年还有：<p id="countdown" style="display: inline-block;"></p></h1>
+					</div>
+					<div id="footer">
+						<span>全权制作人: 梦蝶</span>
+						<a href="https://qm.qq.com/q/fC0Uy1gCYM"  target="_blank">联系我们(597569159)</a>
+						<span>网站已经存在: <span id="uptime"></span></span>
+						<span>&copy; 2024 梦蝶<a href="about-main.html">mengdie-moon</a>.版权所有 本站提供多种联系方式</span>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+    <script src="js/frist.js"></script>
+	<script src="js/KanBanNiang/live2d.js"></script>
+    <script src="js/KanBanNiang/waifu-tips.js"></script>
+    <script type="text/javascript">initModel()</script>
+	<script>
+		function button_toks(){
+			window.open('https://kuaishou.cn/profile/3xh3fgatucxjvqg');
+		}
+		function buton_togithub(){
+			window.open('https://github.com/mengdie-moon');
+		}
+		function buton_toqqgroup(){
+			window.open('https://qm.qq.com/q/ktM4zOFSyk');
+		}
+		function updateCountdown() {
+            const now = new Date();
+            const currentYear = now.getFullYear();
+            const targetYear = currentYear + 1; // 下一年的年份
+            const targetDate = new Date(targetYear, 0, 1); // 下一年的1月1日
+            const diff = targetDate - now; // 毫秒差
+
+            const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((diff % (1000 * 60)) / 1000);
+
+            // 更新年份显示
+            document.getElementById('target-year').textContent = targetYear;
+
+            // 更新倒计时显示
+            document.getElementById('countdown').textContent = 
+                days + " 天 " +
+                hours + " 小时 " +
+                minutes + " 分钟 " +
+                seconds + " 秒 ";
+
+            // 如果已经过了下一年的1月1日，则更新目标年份
+            if (diff <= 0) {
+                document.getElementById('target-year').textContent = currentYear + 2;
+                targetDate.setFullYear(currentYear + 2);
+            }
+        }
+
+        // 立即更新倒计时，并每秒更新一次
+        updateCountdown();
+        setInterval(updateCountdown, 1000);
+
+	</script>
+    <link rel="stylesheet" type="text/css" href="css/KanBanNiang/flat-ui.min.css"/>
+</body>
+</html>
