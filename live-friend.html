@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/live-page.css">
+    <link rel="icon" href="img/logo.png">
+    <link rel="stylesheet" type="text/css" href="css/KanBanNiang/waifu.css"/>
+    <script src="https://cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
+	<title>生活随笔--Friend</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11.3.0/dist/sweetalert2.min.css">
+	<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.3.0/dist/sweetalert2.min.js"></script>
+</head>
+<body>
+    <link rel="stylesheet" type="text/css" href="css/KanBanNiang/waifu.css">
+	<div class="waifu" id="waifu">
+        <div class="waifu-tips" style="opacity: 1;"></div>
+        <canvas id="live2d" width="280" height="250" class="live2d"></canvas>
+        <div class="waifu-tool">
+            <span class="fui-home"></span>
+            <span class="fui-chat"></span>
+            <span class="fui-eye"></span>
+            <span class="fui-user"></span>
+            <span class="fui-photo"></span>
+            <span class="fui-info-circle"></span>
+            <span class="fui-cross"></span>
+        </div>
+    </div>
+    <div class="page">
+		<!-- 顶部导航 -->
+		<div class="page-top">
+			<a href="index.html">
+				梦蝶个人网站
+			</a>
+			<div class="search">
+				<img src="img/csdn.png" class="search-icon" id="csdn-icon" alt="csdn">
+				<img src="img/sougo.png" alt="" class="search-icon" id="sougo-icon">
+				<img src="img/bing.png" alt="Bing" class="search-icon" id="bing-icon">
+    			<img src="img/baidu.png" alt="Baidu" class="search-icon active" id="baidu-icon">
+    			<input type="text" id="expandable-input" placeholder="Baidu Search..." onkeydown="handleKeyDown(event)">
+			</div>
+			<p>对未来真正的慷慨，是把一切献给现在。----加缪</p>
+		</div>
+		<!-- 内容 -->
+		<div class="page-con">
+			<div class="pc-nav">
+				<div class="nav">
+					<div class="time">
+						<span>Now：</span>
+						<div id="current-time"></div>
+					</div>
+					<a href="index.html">首页</a>
+					<a href="about-main.html">关于我</a>
+					<a href="yuanma-main.html">源码下载</a>
+					<a href="live-spen.html" class="clicked">生活随笔</a>
+					<a href="game.html">更多精彩</a>
+					<h3>每日一言:</h3>
+					<p id="quoteDisplay"></p>
+				</div>
+				<div class="code">
+					<img src="img/Addwe.png" alt="咦?图片被外星人拐走了">
+					<p>扫码 加入我们~~</p>
+				</div>
+			</div>
+            <div class="pc-box">
+                <div class="live-pen">
+                    <h3 class="command-title">Top--2🔥</h3>
+                    <div class="live-page">
+                        <div class="content-wrapper">
+                            <h4>Friend--友谊</h4>
+                            <span style="font-size: 14px; color: rgba(0,0,0,0.4);">假如我有这样的朋友:能读懂我，能穿过层层面具，如入无人之境的走进我的心灵，用一种彼
+                                此都懂的语言来和我进行灵魂的对话和交流--寄语(珍惜)</span>
+                            <br />
+                            <span>在这个纷扰的世界中，我一直在寻找，寻找一个能读懂我的朋友，一个能穿过我层层面具，直抵我心灵深处的知己。假如我有这样的朋友，那该多好：我们用一种彼此都懂的语言，进行灵魂的对话和交流。</span>
+                            <br />
+                            <span>我曾以为，这样的朋友是遥不可及的幻想，是生命中不可多得的奢侈品。直到有一天，在阳光洒满的午后，我遇到了你。你不是一个奇迹，却让我感受到了奇迹般的存在。在你的眼中，我看到了自己的倒影，那么真实，那么纯粹。</span>
+                            <br />
+                            <span>你不需要过多的言语，就能感知到我内心的波动。在我沉默不语时，你懂得我的思考；在我欢笑时，你分享我的快乐。你的存在，让我明白了什么是真正的理解，什么是深刻的交流。</span>                   
+                            <br />
+                            <span>我们的对话，不仅仅是声音的传递，更是灵魂的触碰。你让我相信，在这个世界上，总有一些情感是超越语言的，总有一些连接是超越时空的。你让我明白，真正的友谊，是两颗心在茫茫人海中相遇，是两个灵魂在无尽宇宙中找到彼此。</span>
+                            <br />
+                            <img src="img/img-live/live-friend.png" alt="">
+                            <span>假如我有这样的朋友，我会珍惜每一次与你相遇的机会，因为我知道，这样的相遇是生命的恩赐，是命运的安排。在你面前，我可以放下所有的防备，展示我最真实的一面。在你的陪伴下，我可以勇敢地面对生活的挑战，坚定地追求我的梦想。</span>
+                            <br />
+                            <span>我们的友谊，像是一首无声的诗，只有心灵能够听见；像是一幅抽象的画，只有灵魂能够欣赏。它不需要任何外在的装饰，因为它本身就是最美丽的存在。</span>
+                            <br />
+                            <span>在这个充满哲学思考的人生旅途中，我感谢有你。你让我看到了友谊的深度，让我感受到了生命的宽度。你让我明白，真正的朋友，是那个能在你最需要的时候，用一种无声的语言，告诉你：“你不是一个人在战斗。”</span>
+                            <br />
+                            <span>所以，假如我有这样的朋友，那就是你。在这个阳光明媚的日子里，我想对你说：“感谢你，我的朋友，因为有你，我的世界变得更加精彩，我的心灵变得更加丰富。”愿我们的友谊，如同这永不褪色的阳光，永远温暖，永远灿烂。</span>
+                            <hr />
+                            <div class="live-page-say">
+                                <span style="color: #ccc;">注意！ 以上素材均来自网络</span>
+                                <span style="color: #ccc;">如有侵权立删!</span>
+                                <span style="color: #ccc;">Title:《心之声》</span>
+                                <a href="game.html" class="game">
+                                    <span style="color: #ccc;">看腻了？点我娱乐！</span>
+                                </a>
+                            </div>
+                            <div class="btn-change-page">
+                                <a href="live-sunshine.html">
+                                    <span>上一篇</span>
+                                </a>
+                                <a href="live-famer.html">
+                                    <span>下一篇</span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="footer">
+                    <span>全权制作人: 梦蝶</span>
+                    <a href="https://qm.qq.com/q/fC0Uy1gCYM"  target="_blank">联系我们(597569159)</a>
+                    <span>网站已经存在: <span id="uptime"></span></span>
+                    <span>&copy; 2024 梦蝶<a href="about-main.html">mengdie-moon</a>.版权所有 本站提供多种联系方式</span>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="js/frist.js"></script>
+    <script src="js/KanBanNiang/live2d.js"></script>
+    <script src="js/KanBanNiang/waifu-tips.js"></script>
+    <script type="text/javascript">initModel()</script>
+    <script>
+		document.addEventListener('DOMContentLoaded', function() {
+		document.addEventListener('copy', function(e) {
+				e.preventDefault();
+				const selection = window.getSelection();
+				const selectedText = selection.toString();
+				const localLink = document.location.href;
+				const appendLink = `\n-------------------------------\n作者:梦蝶 Moon \n转载请注明出处: ${localLink}\n`;
+				const copyText = selectedText + appendLink;
+
+				if (e.clipboardData) {
+					e.clipboardData.setData('text/plain', copyText);
+				} else if (window.clipboardData) {
+					window.clipboardData.setData('Text', copyText);
+				}
+				console.log('复制成功，已附加版权信息。');
+			});
+		});
+	</script>
+
+    <link rel="stylesheet" type="text/css" href="css/KanBanNiang/flat-ui.min.css"/>
+</body>
+</html>

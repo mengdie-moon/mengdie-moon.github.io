@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/live-page.css">
+    <link rel="icon" href="img/logo.png">
+    <link rel="stylesheet" type="text/css" href="css/KanBanNiang/waifu.css"/>
+    <script src="https://cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11.3.0/dist/sweetalert2.min.css">
+	<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.3.0/dist/sweetalert2.min.js"></script>
+	<title>生活随笔--Web背景甄选</title>
+</head>
+<body>
+    <link rel="stylesheet" type="text/css" href="css/KanBanNiang/waifu.css">
+	<div class="waifu" id="waifu">
+        <div class="waifu-tips" style="opacity: 1;"></div>
+        <canvas id="live2d" width="280" height="250" class="live2d"></canvas>
+        <div class="waifu-tool">
+            <span class="fui-home"></span>
+            <span class="fui-chat"></span>
+            <span class="fui-eye"></span>
+            <span class="fui-user"></span>
+            <span class="fui-photo"></span>
+            <span class="fui-info-circle"></span>
+            <span class="fui-cross"></span>
+        </div>
+    </div>
+    <div class="page">
+		<!-- 顶部导航 -->
+		<div class="page-top">
+			<a href="index.html">
+				梦蝶个人网站
+			</a>
+			<div class="search">
+				<img src="img/csdn.png" class="search-icon" id="csdn-icon" alt="csdn">
+				<img src="img/sougo.png" alt="" class="search-icon" id="sougo-icon">
+				<img src="img/bing.png" alt="Bing" class="search-icon" id="bing-icon">
+    			<img src="img/baidu.png" alt="Baidu" class="search-icon active" id="baidu-icon">
+    			<input type="text" id="expandable-input" placeholder="Baidu Search..." onkeydown="handleKeyDown(event)">
+			</div>
+			<p>对未来真正的慷慨，是把一切献给现在。----加缪</p>
+		</div>
+		<!-- 内容 -->
+		<div class="page-con">
+			<div class="pc-nav">
+				<div class="nav">
+					<div class="time">
+						<span>Now：</span>
+						<div id="current-time"></div>
+					</div>
+					<a href="index.html">首页</a>
+					<a href="about-main.html">关于我</a>
+					<a href="yuanma-main.html">源码下载</a>
+					<a href="live-spen.html" class="clicked">生活随笔</a>
+					<a href="game.html">更多精彩</a>
+					<h3>每日一言:</h3>
+					<p id="quoteDisplay"></p>
+				</div>
+				<div class="code">
+					<img src="img/Addwe.png" alt="咦?图片被外星人拐走了">
+					<p>扫码 加入我们~~</p>
+				</div>
+			</div>
+            <div class="pc-box">
+                <div class="live-pen">
+                    <h3 class="command-title">Top--6🔥</h3>
+                    <div class="live-page">
+                        <div class="content-wrapper">
+                            <h4>Web-网页渲染</h4>
+                            <span style="font-size: 14px; color: rgba(0,0,0,0.4);">在很多的博客网页中，都有一些非常简洁美观的博客动画背景，比如Canvas-Ribbon、 three-waves、 canvas-nest、 canvas_lines、 canvas_sphere 等等 -- 寄语</span>
+                            <br />
+							<h3>背景彩带效果：Canvas-Ribbon</h3>
+							<span>这种背景效果是一条颜色鲜艳的彩色丝带，随着鼠标点击可以自动变换舞动。在<span class="Code-some" style="margin-left:0;font-size: 14px; color: rgba(53, 111, 212, 0.4);">"script"</span>标签上可以通过几个参数调整该彩带效果：</span>
+							<ul>
+								<li>size: 彩带宽度</li>
+								<li>alpha: 彩带透明效果</li>
+								<li>zIndex: 彩带层次</li>
+							</ul>
+							<img src="img/Code/bg1.png" alt="">
+                            <span class="Code-some" style="margin-left:0;font-size: 14px; color: rgba(53, 111, 212, 0.4);">源码展示</span>
+                            <code style="font-size: 14px;">
+                                &lt;script id="ribbon" size="150" alpha='0.9' zIndex="-2" src="https://cdn.jsdelivr.net/gh/theme-next/theme-next-canvas-ribbon@1/canvas-ribbon.js"&gt;&lt;/script&gt;
+                            </code>
+							<h3>波浪效果：three-waves</h3>
+                            <span>由小球组成的动态波浪效果，波浪起伏方向会随着鼠标的移动而改变方向。</span>
+                            <img src="img/Code/bg2.png" alt="">
+                            <span class="Code-some" style="margin-left:0;font-size: 14px; color: rgba(53, 111, 212, 0.4);">源码展示</span>
+                            <br />
+							<code style="font-size: 14px;">
+                                &lt;script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/87/three.js"&gt;&lt;/script&gt;<br>
+                                &lt;script src="https://cdn.jsdelivr.net/gh/theme-next/theme-next-three@latest/three-waves.min.js"&gt;&lt;/script&gt;
+                            </code>
+							<br />
+							<h3>蜂窝巢效果：canvas-nest</h3>
+							<span>由线条组成的动态效果，线条会随着鼠标的移动和停止而不断汇聚，形成类似蜂窝巢一样的结构。</span>
+                            <br>
+                            <span class="Code-some" style="margin-left:0;font-size: 14px; color: rgba(53, 111, 212, 0.4);">源码展示</span>
+                            <code style="font-size: 14px;">
+                                &lt;script src="https://cdn.bootcss.com/canvas-nest.js/1.0.0/canvas-nest.min.js"&gt;&lt;/script&gt;
+                            </code>
+                            <br />
+                            <h3>随机点、画线效果：canvas_lines</h3>
+							<br />
+                            <span>由线条和小球组成的动态效果，线条和小球相互连接，会随着鼠标的移动而改变方向。</span>
+                            <br>
+                            <span class="Code-some" style="margin-left:0;font-size: 14px; color: rgba(53, 111, 212, 0.4);">源码展示</span>
+                            <br>
+                            <code style="font-size: 14px;">
+                                &lt;script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/87/three.js"&gt;&lt;/script&gt;
+                                <br>
+                                &lt;script src="https://cdn.jsdelivr.net/gh/theme-next/theme-next-three@latest/canvas_lines.min.js" &gt;&lt;/script&gt;
+                            </code>
+							<br />
+                            <h3>球状光线效果：canvas_sphere</h3>
+							<span>由线条模拟光球的动态效果，光球会随着鼠标的移动而旋转改变方向。</span>
+                            <br>
+                            <span class="Code-some" style="margin-left:0;font-size: 14px; color: rgba(53, 111, 212, 0.4);">源码展示</span>
+                            <br>
+                            <code style="font-size: 14px;">
+                                &lt;script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/87/three.js"&gt;&lt;/script&gt;
+                                <br>
+                                &lt;script src="https://cdn.jsdelivr.net/gh/theme-next/theme-next-three@latest/canvas_sphere.min.js" &gt;&lt;/script&gt;
+                            </code>
+                            <br>
+							<hr style="margin-top: 15px;"/>
+                            <div class="live-page-say">
+                                <span style="color: #ccc;">注意！ 以上素材均来自网络</span>
+                                <span style="color: #ccc;">如有侵权立删!</span>
+                                <span style="color: #ccc;">Title:《Web-网页渲染》</span>
+                                <a href="game.html" class="game">
+                                    <span style="color: #ccc;">看腻了？点我娱乐！</span>
+                                </a>
+                            </div>
+                            <div class="btn-change-page">
+                                <a href="live-code.html">
+                                    <span>上一篇</span>
+                                </a>
+                                <a href="C-No.1page.html">
+                                    <span>下一篇</span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="footer">
+                    <span>全权制作人: 梦蝶</span>
+                    <a href="https://qm.qq.com/q/fC0Uy1gCYM"  target="_blank">联系我们(597569159)</a>
+                    <span>网站已经存在: <span id="uptime"></span></span>
+                    <span>&copy; 2024 梦蝶<a href="about-main.html">mengdie-moon</a>.版权所有 本站提供多种联系方式</span>
+                </div>
+            </div>
+		</div>
+	</div>
+    <script src="js/frist.js"></script>
+    <script src="js/KanBanNiang/live2d.js"></script>
+    <script>
+		document.addEventListener('DOMContentLoaded', function() {
+		document.addEventListener('copy', function(e) {
+				e.preventDefault();
+				const selection = window.getSelection();
+				const selectedText = selection.toString();
+				const localLink = document.location.href;
+				const appendLink = `\n-------------------------------\n作者:梦蝶 Moon \n转载请注明出处: ${localLink}\n`;
+				const copyText = selectedText + appendLink;
+
+				if (e.clipboardData) {
+					e.clipboardData.setData('text/plain', copyText);
+				} else if (window.clipboardData) {
+					window.clipboardData.setData('Text', copyText);
+				}
+				console.log('复制成功，已附加版权信息。');
+			});
+		});
+	</script>
+    <script src="js/KanBanNiang/waifu-tips.js"></script>
+    <script type="text/javascript">initModel()</script>
+
+    <link rel="stylesheet" type="text/css" href="css/KanBanNiang/flat-ui.min.css"/>
+</body>
+</html>

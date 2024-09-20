@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/live-page.css">
+    <link rel="icon" href="img/logo.png">
+	<title>生活随笔--Sea</title>
+    <link rel="stylesheet" type="text/css" href="css/KanBanNiang/waifu.css"/>
+    <script src="https://cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11.3.0/dist/sweetalert2.min.css">
+	<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.3.0/dist/sweetalert2.min.js"></script>
+</head>
+<body>
+    <link rel="stylesheet" type="text/css" href="css/KanBanNiang/waifu.css">
+	<div class="waifu" id="waifu">
+        <div class="waifu-tips" style="opacity: 1;"></div>
+        <canvas id="live2d" width="280" height="250" class="live2d"></canvas>
+        <div class="waifu-tool">
+            <span class="fui-home"></span>
+            <span class="fui-chat"></span>
+            <span class="fui-eye"></span>
+            <span class="fui-user"></span>
+            <span class="fui-photo"></span>
+            <span class="fui-info-circle"></span>
+            <span class="fui-cross"></span>
+        </div>
+    </div>
+    <div class="page">
+		<!-- 顶部导航 -->
+		<div class="page-top">
+			<a href="index.html">
+				梦蝶个人网站
+			</a>
+			<div class="search">
+				<img src="img/csdn.png" class="search-icon" id="csdn-icon" alt="csdn">
+				<img src="img/sougo.png" alt="" class="search-icon" id="sougo-icon">
+				<img src="img/bing.png" alt="Bing" class="search-icon" id="bing-icon">
+    			<img src="img/baidu.png" alt="Baidu" class="search-icon active" id="baidu-icon">
+    			<input type="text" id="expandable-input" placeholder="Baidu Search..." onkeydown="handleKeyDown(event)">
+			</div>
+			<p>对未来真正的慷慨，是把一切献给现在。----加缪</p>
+		</div>
+		<!-- 内容 -->
+		<div class="page-con">
+			<div class="pc-nav">
+				<div class="nav">
+					<div class="time">
+						<span>Now：</span>
+						<div id="current-time"></div>
+					</div>
+					<a href="index.html">首页</a>
+					<a href="about-main.html">关于我</a>
+					<a href="yuanma-main.html">源码下载</a>
+					<a href="live-spen.html" class="clicked">生活随笔</a>
+					<a href="game.html">更多精彩</a>
+					<h3>每日一言:</h3>
+					<p id="quoteDisplay"></p>
+				</div>
+				<div class="code">
+					<img src="img/Addwe.png" alt="咦?图片被外星人拐走了">
+					<p>扫码 加入我们~~</p>
+				</div>
+			</div>
+            <div class="pc-box">
+                <div class="live-pen">
+                    <h3 class="command-title">Top--4🔥</h3>
+                    <div class="live-page">
+                        <div class="content-wrapper">
+                            <h4>Sea--梦中情海</h4>
+                            <span style="font-size: 14px; color: rgba(0,0,0,0.4);">你能看见山，你能看见海，你能看见这个世界的一切，我就不一样，我目光比较短浅，只能看见你。--寄语</span>
+                            <br />
+                            <span>大海，这位孤独的旅者，独自航行在无垠的海洋之中。它的辽阔，仿佛能够容纳所有的孤独，所有的忧伤，所有的沉默。大海的深处，隐藏着无数的秘密，它的波涛，轻轻地拍打着海岸，仿佛在诉说着无人能懂的语言。</span>
+                            <br />
+                            <span>大海的表面，是波澜壮阔的景象。海浪翻滚，汹涌澎湃，仿佛在为孤独的大海唱着歌。太阳的光芒，洒在海面上，形成了一道道金色的波纹，如同一首无声的诗歌，在大海的怀抱中轻轻吟唱。</span>
+                            <img src="img/img-live/live-sea.png" alt="">
+                            <span>大海的深处，是一片宁静的世界。在这里，时间仿佛静止了，所有的声音都消失了。大海的孤独，在这里得到了最好的体现。它独自承受着压力，独自面对着黑暗，独自守护着那些不为人知的秘密。</span>
+                            <br />
+                            <span>大海的柔情，是一种无声的关怀，是一种无言的陪伴。它用它的波涛，轻轻地抚摸着海岸，给予人们一种安慰和力量。它用它的沉默，倾听着人们的倾诉，给予人们一种理解和支持。</span>
+                            <br />
+                            <span>大海的孤独，是一种深沉的孤独，是一种深刻的孤独。它让我们感受到了生命的孤独，也让我们明白了生命的坚韧和勇气。大海的孤独，是一种无声的陪伴，是一种无言的支持。它让我们感受到了生命的孤独，也让我们明白了生命的意义和价值。</span>
+                            <br />
+                            <span>让我们珍惜大海的孤独，珍惜与大海共度的每一个美好时刻。让我们用心去感受大海的孤独，用心去理解大海的内心世界。让我们用大海的孤独，温暖我们自己的心灵，给予我们力量和勇气。让我们用大海的孤独，让我们的生活充满阳光和希望。</span>
+                            <hr />
+                            <div class="live-page-say">
+                                <span style="color: #ccc;">注意！ 以上素材均来自网络</span>
+                                <span style="color: #ccc;">如有侵权立删!</span>
+                                <span style="color: #ccc;">Title:《海》</span>
+                                <a href="game.html" class="game">
+                                    <span style="color: #ccc;">看腻了？点我娱乐！</span>
+                                </a>
+                            </div>
+                            <div class="btn-change-page">
+                                <a href="live-famer.html">
+                                    <span>上一篇</span>
+                                </a>
+                                <a href="live-code.html">
+                                    <span>下一篇</span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="footer">
+                    <span>全权制作人: 梦蝶</span>
+                    <a href="https://qm.qq.com/q/fC0Uy1gCYM"  target="_blank">联系我们(597569159)</a>
+                    <span>网站已经存在: <span id="uptime"></span></span>
+                    <span>&copy; 2024 梦蝶<a href="about-main.html">mengdie-moon</a>.版权所有 本站提供多种联系方式</span>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="js/KanBanNiang/live2d.js"></script>
+    <script src="js/KanBanNiang/waifu-tips.js"></script>
+    <script type="text/javascript">initModel()</script>
+
+    <link rel="stylesheet" type="text/css" href="css/KanBanNiang/flat-ui.min.css"/>
+    <script>
+		document.addEventListener('DOMContentLoaded', function() {
+		document.addEventListener('copy', function(e) {
+				e.preventDefault();
+				const selection = window.getSelection();
+				const selectedText = selection.toString();
+				const localLink = document.location.href;
+				const appendLink = `\n-------------------------------\n作者:梦蝶 Moon \n转载请注明出处: ${localLink}\n`;
+				const copyText = selectedText + appendLink;
+
+				if (e.clipboardData) {
+					e.clipboardData.setData('text/plain', copyText);
+				} else if (window.clipboardData) {
+					window.clipboardData.setData('Text', copyText);
+				}
+				console.log('复制成功，已附加版权信息。');
+			});
+		});
+	</script>
+    <script src="js/frist.js"></script>
+</body>
+</html>
