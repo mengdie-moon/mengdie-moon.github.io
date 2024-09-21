@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/live-page-onlyCode.css">
+    <link rel="icon" href="/img/logo.png">
+	<title>生活随笔-Web - 开源之SweetAlert2</title>
+	<link rel="stylesheet" type="text/css" href="/css/KanBanNiang/waifu.css"/>
+	<script src="https://cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js"></script>
+	<link rel="stylesheet" href="/css/atom-one-dark.min.css">
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/highlightjs-line-numbers.js/2.8.0/highlightjs-line-numbers.min.js"></script>
+    <script src="https://cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11.3.0/dist/sweetalert2.min.css">
+	<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.3.0/dist/sweetalert2.min.js"></script>
+</head>
+<body>
+    <link rel="stylesheet" type="text/css" href="/css/KanBanNiang/waifu.css">
+	<div class="waifu" id="waifu">
+        <div class="waifu-tips" style="opacity: 1;"></div>
+        <canvas id="live2d" width="280" height="250" class="live2d"></canvas>
+        <div class="waifu-tool">
+            <span class="fui-home"></span>
+            <span class="fui-chat"></span>
+            <span class="fui-eye"></span>
+            <span class="fui-user"></span>
+            <span class="fui-photo"></span>
+            <span class="fui-info-circle"></span>
+            <span class="fui-cross"></span>
+        </div>
+    </div>
+    <div class="page">
+		<!-- 顶部导航 -->
+		<div class="page-top">
+			<a href="/index.html">
+				梦蝶个人网站
+			</a>
+			<div class="search">
+				<img src="/img/csdn.png" class="search-icon" id="csdn-icon" alt="csdn">
+				<img src="/img/sougo.png" alt="" class="search-icon" id="sougo-icon">
+				<img src="/img/bing.png" alt="Bing" class="search-icon" id="bing-icon">
+    			<img src="/img/baidu.png" alt="Baidu" class="search-icon active" id="baidu-icon">
+    			<input type="text" id="expandable-input" placeholder="Baidu Search..." onkeydown="handleKeyDown(event)">
+			</div>
+			<p>对未来真正的慷慨，是把一切献给现在。----加缪</p>
+		</div>
+		<!-- 内容 -->
+		<div class="page-con">
+			<div class="pc-nav">
+				<div class="nav">
+					<div class="time">
+						<span>Now：</span>
+						<div id="current-time"></div>
+					</div>
+					<a href="/index.html">首页</a>
+					<a href="/about-main.html">关于我</a>
+					<a href="/yuanma-main.html">源码下载</a>
+					<a href="/live-spen.html" class="clicked">生活随笔</a>
+					<a href="/game.html">更多精彩</a>
+					<h3>每日一言:</h3>
+					<p id="quoteDisplay"></p>
+				</div>
+				<div class="code">
+					<img src="/img/Addwe.png" alt="咦?图片被外星人拐走了">
+					<p>扫码 加入我们~~</p>
+				</div>
+			</div>
+            <div class="pc-box">
+				<div class="live-pen" style="width: 95%;">
+                    <h3 class="command-title">Top--7🔥</h3>
+                    <div class="live-page" style="width: 100%;">
+                        <div class="content-wrapper">
+                            <h4>Web - 开源之SweetAlert2</h4>
+                            <h3>介绍</h3>
+                            <span>SweetAlert2 是一个美观、<a href="https://so.csdn.net/so/search?q=%E5%93%8D%E5%BA%94%E5%BC%8F">响应试(Search)</a>、高度可定制且无障碍（遵循 WAI-ARIA 标准）的 JavaScript 弹出框替换库。它没有外部依赖，提供了丰富的配置选项以满足各种需求，如警告对话框、确认提示、模态窗口和自定义反馈。如果你正在寻找一个替代原生弹出框的解决方案，SweetAlert2 是一个理想的选择。</span>
+                            <h3>安装</h3>
+                            <span>通过 npm 或者 yarn 进行安装：</span>
+<pre>
+<code class="javascript">   # 使用 npm
+    npm install sweetalert2
+
+    # 或者使用 yarn
+    yarn add sweetalert2
+</code>
+</pre>
+                            <span>通过script引入：</span>
+<pre>
+<code class="html"> &lt;script src="https://cdn.jsdelivr.net/npm/sweetalert2@8"&gt;&lt;/script&gt;
+</code>
+</pre>
+                            <h3>基础用法</h3>
+                            <span>在你的 JavaScript 文件中引入 sweetalert2，然后调用相应的方法创建弹窗：</span>
+<pre>
+<code class="javascript">   import Swal from 'sweetalert2'
+    Swal.fire({
+        title: '欢迎来到 SweetAlert2!',
+        text: '这是一个基础示例',
+        icon: 'info'
+    })
+</code>
+</pre>
+                        <h3>应用案例和最佳实践</h3>    
+                        <span>显示警告消息：</span>
+<pre>
+<code class="javascript">  Swal.fire({
+    title: '警告',
+        text: '你确定要这样做吗？',
+        icon: 'warning',
+        showCancelButton: true,
+        confirmButtonText: '是的，我确定',
+        cancelButtonText: '取消'
+        }).then((result) =&gt; {
+        if (result.isConfirmed) {
+            console.log('操作已确认')
+        } else if (result.isDismissed) {
+            console.log('操作已取消')
+        }
+    })
+</code>
+</pre>
+                        <span>自定义按钮样式：</span>
+<pre>
+<code class="javascript">   const Toast = Swal.mixin({
+    customClass: {
+        confirmButton: 'btn btn-success',
+        cancelButton: 'btn btn-danger'
+    },
+        buttonsStyling: false
+    })
+    Toast.fire({
+        title: '是否保存更改?',
+        icon: 'question',
+        showCancelButton: true
+    })
+</code>
+</pre>
+                        <span>处理异步操作：</span>
+<pre>
+<code class="javascript">   Swal.fire({
+        title: '加载中...',
+        allowOutsideClick: false,
+        onBeforeOpen: () =&gt; {
+            Swal.showLoading()
+        },
+        onConfirm: async () =&gt; {
+            try {
+                await someAsyncFunction()
+                Swal.fire('成功!', '操作已完成.', 'success')
+            } catch (error) {
+                Swal.fire('错误', error.message, 'error')
+            }
+        }
+    })
+</code>
+</pre>
+                        <h3>示例 案例</h3>
+                        <span> 带有 确定和取消的 弹框</span>
+<pre>
+<code class="javascript">   Swal.fire({
+        type: 'warning', // 弹框类型
+        title: '注销帐号', //标题
+        text: "注销后将无法恢复，请谨慎操作！", //显示内容            
+    
+        confirmButtonColor: '#3085d6',// 确定按钮的 颜色
+        confirmButtonText: '确定',// 确定按钮的 文字
+        showCancelButton: true, // 是否显示取消按钮
+        cancelButtonColor: '#d33', // 取消按钮的 颜色
+        cancelButtonText: "取消", // 取消按钮的 文字
+    
+        focusCancel: true, // 是否聚焦 取消按钮
+        reverseButtons: true  // 是否 反转 两个按钮的位置 默认是  左边 确定  右边 取消
+    }).then((isConfirm) =&gt; {
+        try {
+            //判断 是否 点击的 确定按钮
+            if (isConfirm.value) {
+                Swal.fire("成功", "点击了确定", "success");
+            }
+            else {
+                Swal.fire("取消", "点击了取消", "error");
+            }
+        } catch (e) {
+            alert(e);
+        }
+    }); 
+
+    // 或者这个案例
+    Swal.fire({
+        title: '领取你的寻龙装备！',
+        input: 'select',
+        html:
+            '&lt;input id="swal-input1" class="swal2-input"&gt;' +
+            '&ltinput id="swal-input2" class="swal2-input"&gt;',
+        inputAttributes: {
+            autocapitalize: 'off'
+        },
+        showCancelButton: true,
+        confirmButtonText: 'Look up',
+        showLoaderOnConfirm: true,
+        preConfirm: (login) =&gt; {
+            return fetch(`//api.github.com/users/${login}`)
+                .then(response =&gt; {
+                    if (!response.ok) {
+                        throw new Error(response.statusText)
+                    }
+                    return response.json()
+                })
+                .catch(error =&gt; {
+                    Swal.showValidationMessage(
+                        `Request failed: ${error}`
+                    )
+                })
+        },
+        allowOutsideClick: () =&gt; !Swal.isLoading()
+    }).then((result) =&gt; {
+        if (result.value) {
+            Swal.fire({
+                title: `${result.value.login}'s avatar`,
+                imageUrl: result.value.avatar_url
+            })
+        }
+    })
+</code>
+</pre>
+                    <span>带有 展示 标签内容 的弹框</span>
+<pre>
+<code class="javascript">   var content = "无记录";
+    var msg=""; //msg 是从外面传入的数据
+    
+    if (msg) {
+    
+        content = "&lt;p style='color: red'&gt;最近一次操作后的5小时内有效&lt;/p&gt; "
+            + "&ltp&gt;可以使用 Ctrl +F 查找关键字&lt/p&gt;"
+            + "&lttable class='table_list'&gt;"
+            + "&lttr&gt;"
+            + "     &ltth class='js_tr_data'&gt; 时间&lt/th&gt; &ltth&gt;名称&lt/th&gt;&ltth&gt;密码&lt/th&gt;"
+            + "&lt/tr&gt;"
+            + msg
+            + "&lt/table&gt;"
+    }
+    
+    Swal.fire({
+        title: '<strong>记录</strong>',
+        type: 'info',
+        html: content, // HTML
+        focusConfirm: true, //聚焦到确定按钮
+        showCloseButton: true,//右上角关闭
+    })
+    
+</code>
+</pre>
+                    <span>带有定位 和 消失时间的 弹框</span>  
+<pre>
+<code class="javascript">   Swal.fire({
+        position: 'top-end', //定位 左上角
+        type: 'success',
+        title: 'Your work has been saved',
+        showConfirmButton: false,
+        timer: 1500
+    )                              
+</code>
+</pre>
+                    <span>自定义 第三方 css 的 弹框 (推荐使用 <code>Animate.css</code> )</span>
+<pre>
+<code class="javascript">   Swal.fire({
+        title: 'Custom animation with Animate.css',
+        animation: false,
+        customClass: 'animated tada'
+    })                              
+</code>
+</pre>
+                    <span>右上角 通知类 弹窗</span>
+<pre>
+<code class="javascript">   Swal.fire({
+        toast: true,
+        position: 'top-end',
+        showConfirmButton: false,
+        timer: 3000,
+        type: 'success',
+        title: 'Signed in successfully'
+    })                            
+</code>
+</pre>
+                    <span>做 一个自己的 通用模版</span>
+<pre>
+<code class="javascript">   //定义模版 (可多次使用)
+    var MyBox = Swal.mixin({
+        toast: true,
+        position: 'top-end',
+        showConfirmButton: false,
+        timer: 3000
+    });
+    
+    //调用
+    MyBox.fire({
+        type: 'success',
+        title: 'successfully'
+    });    
+</code>
+</pre>
+<hr>
+                        <div id="vcomments" style="margin: 25px 0;"></div>
+                        <hr />
+                        <div class="live-page-say">
+                            <span style="color: #ccc;">注意！ 以上素材均来自网络</span>
+                            <span style="color: #ccc;">如有侵权立删!</span>
+                            <span style="color: #ccc;">Title:《Web - 开源之SweetAlert2》</span>
+                            <a href="game.html" class="game">
+                                <span style="color: #ccc;">看腻了？点我娱乐！</span>
+                            </a>
+                        </div>
+                        <div class="btn-change-page">
+                            <a href="/C-No.1page.html">
+                                <span>上一篇</span>
+                            </a>
+                            <a href="/404.html">
+                                <span>下一篇</span>
+                            </a>
+                        </div>
+                    </div>
+                    </div>
+                </div>
+                <div class="footer">
+                    <span>全权制作人: 梦蝶</span>
+                    <a href="https://qm.qq.com/q/fC0Uy1gCYM"  target="_blank">联系我们(597569159)</a>
+                    <span>网站已经存在: <span id="uptime"></span></span>
+                    <span>&copy; 2024 梦蝶<a href="about-main.html">mengdie-moon</a>.版权所有 本站提供多种联系方式</span>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="/js/KanBanNiang/live2d.js"></script>
+    <script src="/js/KanBanNiang/waifu-tips.js"></script>
+    <script type="text/javascript">initModel()</script> 
+    <link rel="stylesheet" type="text/css" href="/css/KanBanNiang/flat-ui.min.css"/>
+    <script src="/js/frist.js"></script>
+ 
+    <script>
+    	// 开启代码高亮
+		hljs.initHighlightingOnLoad();
+        hljs.initHighlightingOnLoad();
+        // 行号显示
+        hljs.initLineNumbersOnLoad ({ singleLine:true });
+    </script>
+    <script>
+		document.addEventListener('DOMContentLoaded', function() {
+		document.addEventListener('copy', function(e) {
+				e.preventDefault();
+				const selection = window.getSelection();
+				const selectedText = selection.toString();
+				const localLink = document.location.href;
+				const appendLink = `\n-------------------------------\n作者:梦蝶 Moon \n转载请注明出处: ${localLink}\n`;
+				const copyText = selectedText + appendLink;
+
+				if (e.clipboardData) {
+					e.clipboardData.setData('text/plain', copyText);
+				} else if (window.clipboardData) {
+					window.clipboardData.setData('Text', copyText);
+				}
+				console.log('复制成功，已附加版权信息。');
+			});
+		});
+	</script>
+    <script src="https://cdn.bootcdn.net/ajax/libs/valine/1.5.1/Valine.min.js"></script>
+    <script>
+        new Valine({
+            el: '#vcomments',
+            appId: '21MG1aSIkC71uv7v0NcpKsuk-gzGzoHsz',
+            appKey: 'ESkTqJu5BOJhiSgaZNoAQrVP',
+            placeholder: "你是我一生只会遇见一次的惊喜 ...",
+            avatar:'monsterid',
+            visitor: true
+        })
+    </script>
+</body>
+</html>
