@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/live-page.css">
+	<link rel="icon" href="img/logo.png">
+	<link rel="stylesheet" type="text/css" href="css/KanBanNiang/waifu.css"/>
+    <script src="https://cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11.3.0/dist/sweetalert2.min.css">
+	<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.3.0/dist/sweetalert2.min.js"></script>
+	<title>厌与星的世界-意见反馈处</title>
+</head>
+<body>
+    <style>
+        .advice{
+            margin-top: 50px;
+            padding: 20px;
+            width: 80vw;
+        }
+    </style>
+	<link rel="stylesheet" type="text/css" href="css/KanBanNiang/waifu.css">
+	<div class="waifu" id="waifu">
+        <div class="waifu-tips" style="opacity: 1;"></div>
+        <canvas id="live2d" width="280" height="250" class="live2d"></canvas>
+        <div class="waifu-tool">
+            <span class="fui-home"></span>
+            <span class="fui-chat"></span>
+            <span class="fui-eye"></span>
+            <span class="fui-user"></span>
+            <span class="fui-photo"></span>
+            <span class="fui-info-circle"></span>
+            <span class="fui-cross"></span>
+        </div>
+    </div>
+	<div class="day">
+		<div class="page">
+			<!-- 顶部导航 -->
+			<div class="page-top">
+				<a href="index.html">
+					梦蝶个人网站
+				</a>
+				<div class="search">
+					<img src="img/csdn.png" class="search-icon" id="csdn-icon" alt="csdn">
+					<img src="img/sougo.png" alt="" class="search-icon" id="sougo-icon">
+					<img src="img/bing.png" alt="Bing" class="search-icon" id="bing-icon">
+					<img src="img/baidu.png" alt="Baidu" class="search-icon active" id="baidu-icon">
+					<input type="text" id="expandable-input" placeholder="Baidu Search..." onkeydown="handleKeyDown(event)">
+				</div>
+				<p>对未来真正的慷慨，是把一切献给现在。----加缪</p>
+			</div>
+			<!-- 内容 -->
+			<div class="page-con">
+				<div class="pc-nav">
+					<div class="nav">
+						<div class="time">
+							<span>Now：</span>
+							<div id="current-time"></div>
+						</div>
+						<a href="index.html">首页</a>
+						<a href="about-main.html">关于我</a>
+						<a href="yuanma-main.html">源码下载</a>
+						<a href="live-spen.html">生活随笔</a>
+						<a href="game.html">更多精彩</a>
+						<h3>每日一言:</h3>
+						<p id="quoteDisplay"></p>
+					</div>
+					<div class="code">
+						<img src="img/Addwe.png" alt="咦?图片被外星人拐走了">
+						<p>扫码 加入我们~~</p>
+					</div>
+				</div>
+				<div class="pc-box">
+                    <div class="advice">
+                        <h4>意见反馈处</h4>
+                        <hr>
+                        <div id="vcomments" style="margin: 25px 0;"></div>
+                        <hr>
+                    </div>
+					<div id="footer" style="text-align: center; color: #b0afaf;">
+						<span>全权制作人: 梦蝶</span>
+						<a href="https://qm.qq.com/q/fC0Uy1gCYM"  target="_blank">联系我们(597569159)</a>
+						<span>网站已经存在: <span id="uptime"></span></span>
+						<span>&copy; 2024 梦蝶<a href="about-main.html">mengdie-moon</a>.版权所有 本站提供多种联系方式</span>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+    <script src="js/frist.js"></script>
+	<script src="js/KanBanNiang/live2d.js"></script>
+    <script src="js/KanBanNiang/waifu-tips.js"></script>
+    <script type="text/javascript">initModel()</script>
+    <script src="https://cdn.bootcdn.net/ajax/libs/valine/1.5.1/Valine.min.js"></script>
+    <script>
+        new Valine({
+            el: '#vcomments',
+            appId: '21MG1aSIkC71uv7v0NcpKsuk-gzGzoHsz',
+            appKey: 'ESkTqJu5BOJhiSgaZNoAQrVP',
+            placeholder: "填写反馈，更新建议，bug问题等信息",
+            avatar:'monsterid',
+            visitor: true
+        })
+    </script>
+    
+    <link rel="stylesheet" type="text/css" href="css/KanBanNiang/flat-ui.min.css"/>
+</body>
+</html>

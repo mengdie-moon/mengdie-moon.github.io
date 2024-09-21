@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/live-page.css">
+    <link rel="icon" href="img/logo.png">
+    <link rel="stylesheet" type="text/css" href="css/KanBanNiang/waifu.css"/>
+    <script src="https://cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11.3.0/dist/sweetalert2.min.css">
+	<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.3.0/dist/sweetalert2.min.js"></script>
+	<title>生活随笔--Village</title>
+</head>
+<body>
+    <link rel="stylesheet" type="text/css" href="css/KanBanNiang/waifu.css">
+	<div class="waifu" id="waifu">
+        <div class="waifu-tips" style="opacity: 1;"></div>
+        <canvas id="live2d" width="280" height="250" class="live2d"></canvas>
+        <div class="waifu-tool">
+            <span class="fui-home"></span>
+            <span class="fui-chat"></span>
+            <span class="fui-eye"></span>
+            <span class="fui-user"></span>
+            <span class="fui-photo"></span>
+            <span class="fui-info-circle"></span>
+            <span class="fui-cross"></span>
+        </div>
+    </div>
+    <div class="page">
+		<!-- 顶部导航 -->
+		<div class="page-top">
+			<a href="index.html">
+				梦蝶个人网站
+			</a>
+			<div class="search">
+				<img src="img/csdn.png" class="search-icon" id="csdn-icon" alt="csdn">
+				<img src="img/sougo.png" alt="" class="search-icon" id="sougo-icon">
+				<img src="img/bing.png" alt="Bing" class="search-icon" id="bing-icon">
+    			<img src="img/baidu.png" alt="Baidu" class="search-icon active" id="baidu-icon">
+    			<input type="text" id="expandable-input" placeholder="Baidu Search..." onkeydown="handleKeyDown(event)">
+			</div>
+			<p>对未来真正的慷慨，是把一切献给现在。----加缪</p>
+		</div>
+		<!-- 内容 -->
+		<div class="page-con">
+			<div class="pc-nav">
+				<div class="nav">
+					<div class="time">
+						<span>Now：</span>
+						<div id="current-time"></div>
+					</div>
+					<a href="index.html">首页</a>
+					<a href="about-main.html">关于我</a>
+					<a href="yuanma-main.html">源码下载</a>
+					<a href="live-spen.html" class="clicked">生活随笔</a>
+					<a href="game.html">更多精彩</a>
+					<h3>每日一言:</h3>
+					<p id="quoteDisplay"></p>
+				</div>
+				<div class="code">
+					<img src="img/Addwe.png" alt="咦?图片被外星人拐走了">
+					<p>扫码 加入我们~~</p>
+				</div>
+			</div>
+            <div class="pc-box">
+                <div class="live-pen">
+                    <h3 class="command-title">Top--3🔥</h3>
+                    <div class="live-page">
+                        <div class="content-wrapper">
+                            <h4>Village--乡村</h4>
+                            <span style="font-size: 14px; color: rgba(0,0,0,0.4);">太阳暖一点，再暖一点，生活慢一些，再慢一些，就是我要想的恬恬淡淡的，悠悠然然的日常生活.--寄语(累了就来吧)</span>
+                            <br />
+                            <span>乡村，这个字眼总是让人联想到宁静、和谐与自然之美。它远离城市的喧嚣与繁华，保持着一种独特的朴素与纯真。乡村的美，美在它的朴素，美在它的宁静，更美在它所蕴含的那份深厚的历史与文化底蕴。</span>
+                            <br />
+                            <span>乡村的房屋，没有城市的高楼大厦，却有着独特的韵味。白墙黑瓦，错落有致，仿佛一幅美丽的画卷。那些古老的树木，历经岁月的沧桑，依然屹立不倒，它们是乡村历史的见证者，也是乡村文化的传承者。</span>
+                            <img src="img/img-live/live-famer.png" alt="">
+                            <span>乡村的小路，蜿蜒曲折，像一条玉带一样缠绕在田野之间。走在乡村的小路上，感受着泥土的芬芳，听着鸟儿的的歌声，心情也会变得愉悦起来。乡村的人们，朴实无华，勤劳善良。他们日出而作，日落而息，过着简单而充实的生活。他们的笑容真诚而灿烂，他们的眼神清澈见底，让人忍不住想要靠近。</span>
+                            <br />
+                            <span>乡村的文化，底蕴深厚。那些古老的传说和故事，传承了千年，依然散发着迷人的气息。那些传统的工艺和技艺，经过世代的传承，依然保持着极高的水平。剪纸、刺绣、陶艺等传统艺术，不仅是乡村文化的重要组成部分，更是中华民族文化遗产的瑰宝。</span>
+                            <br />
+                            <span>然而，随着时代的变迁，乡村也面临着许多挑战。年轻人纷纷涌入城市，寻找发展机会，导致乡村人口老龄化，劳动力短缺。此外，农业现代化进程的推进，使得一些传统的农耕方式被淘汰，乡村的特色和优势也逐渐丧失。</span>
+                            <br />
+                            <span>尽管如此，我们依然相信，乡村的朴素之美不会消失。只要我们用心去保护，用心去传承，乡村一定会在新时代焕发出新的生机和活力。让我们共同努力，让乡村的朴素之美永远绽放在我们的心中。</span>
+                            <hr />
+                            <div id="vcomments" style="margin: 25px 0;"></div>
+                            <hr />
+                            <div class="live-page-say">
+                                <span style="color: #ccc;">注意！ 以上素材均来自网络</span>
+                                <span style="color: #ccc;">如有侵权立删!</span>
+                                <span style="color: #ccc;">Title:《乡村的朴素之美》</span>
+                                <a href="game.html" class="game">
+                                    <span style="color: #ccc;">看腻了？点我娱乐！</span>
+                                </a>
+                            </div>
+                            <div class="btn-change-page">
+                                <a href="live-friend.html">
+                                    <span>上一篇</span>
+                                </a>
+                                <a href="live-sea.html">
+                                    <span>下一篇</span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="footer">
+                    <span>全权制作人: 梦蝶</span>
+                    <a href="https://qm.qq.com/q/fC0Uy1gCYM"  target="_blank">联系我们(597569159)</a>
+                    <span>网站已经存在: <span id="uptime"></span></span>
+                    <span>&copy; 2024 梦蝶<a href="about-main.html">mengdie-moon</a>.版权所有 本站提供多种联系方式</span>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="js/KanBanNiang/live2d.js"></script>
+    <script src="js/KanBanNiang/waifu-tips.js"></script>
+    <script type="text/javascript">initModel()</script>
+    <script>
+		document.addEventListener('DOMContentLoaded', function() {
+		document.addEventListener('copy', function(e) {
+				e.preventDefault();
+				const selection = window.getSelection();
+				const selectedText = selection.toString();
+				const localLink = document.location.href;
+				const appendLink = `\n-------------------------------\n作者:梦蝶 Moon \n转载请注明出处: ${localLink}\n`;
+				const copyText = selectedText + appendLink;
+
+				if (e.clipboardData) {
+					e.clipboardData.setData('text/plain', copyText);
+				} else if (window.clipboardData) {
+					window.clipboardData.setData('Text', copyText);
+				}
+				console.log('复制成功，已附加版权信息。');
+			});
+		});
+	</script>
+    <script src="https://cdn.bootcdn.net/ajax/libs/valine/1.5.1/Valine.min.js"></script>
+    <script>
+        new Valine({
+            el: '#vcomments',
+            appId: '21MG1aSIkC71uv7v0NcpKsuk-gzGzoHsz',
+            appKey: 'ESkTqJu5BOJhiSgaZNoAQrVP',
+            placeholder: "你是我一生只会遇见一次的惊喜 ...",
+            avatar:'monsterid',
+            visitor: true
+        })
+    </script>
+    <link rel="stylesheet" type="text/css" href="css/KanBanNiang/flat-ui.min.css"/>
+    <script src="js/frist.js"></script>
+</body>
+</html>
