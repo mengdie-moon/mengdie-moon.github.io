@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,minimum-scale=1.0,user-scalable=no">
+	<link rel="stylesheet" href="css/index.css">
+	<link rel="icon" href="img/logo.png">
+	<link rel="stylesheet" type="text/css" href="css/KanBanNiang/waifu.css"/>
+    <script src="https://cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11.3.0/dist/sweetalert2.min.css">
+	<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.3.0/dist/sweetalert2.min.js"></script>
+	<title>厌与星的世界</title>
+</head>
+<body>
+	<!-- 拖尾勿删 -->
+	<span class="js-cursor-container" style="z-index: 9999;"></span>
+	<link rel="stylesheet" type="text/css" href="css/KanBanNiang/waifu.css">
+	<div class="waifu" id="waifu">
+        <div class="waifu-tips" style="opacity: 1;"></div>
+        <canvas id="live2d" width="280" height="250" class="live2d"></canvas>
+        <div class="waifu-tool">
+            <span class="fui-home"></span>
+            <span class="fui-chat"></span>
+            <span class="fui-eye"></span>
+            <span class="fui-user"></span>
+            <span class="fui-photo"></span>
+            <span class="fui-info-circle"></span>
+            <span class="fui-cross"></span>
+        </div>
+    </div>
+	<div class="page">
+		<!-- 顶部导航 -->
+		<div class="page-top">
+			<a href="index.html">
+				梦蝶个人网站
+			</a>
+			<div class="search">
+				<img src="img/csdn.png" class="search-icon" id="csdn-icon" alt="csdn">
+				<img src="img/sougo.png" alt="" class="search-icon" id="sougo-icon">
+				<img src="img/bing.png" alt="Bing" class="search-icon" id="bing-icon">
+    			<img src="img/baidu.png" alt="Baidu" class="search-icon active" id="baidu-icon">
+    			<input type="text" id="expandable-input" placeholder="Baidu Search..." onkeydown="handleKeyDown(event)">
+			</div>
+			
+			<p>对未来真正的慷慨，是把一切献给现在。----加缪</p>
+		</div>
+		<!-- 内容 -->
+		<div class="page-con">
+			<div class="pc-nav">
+				<div class="nav">
+					<div class="time">
+						<span>Now：</span>
+						<div id="current-time"></div>
+					</div>
+					<a href="index.html" class="clicked" target="_blank">首页</a>
+					<a href="about-main.html" target="_blank">关于我</a>
+					<a href="yuanma-main.html" target="_blank">源码下载</a>
+					<a href="live-spen.html" target="_blank">生活随笔</a>
+					<a href="game.html" target="_blank">更多精彩</a>
+					<h3>每日一言:</h3>
+					<p id="quoteDisplay"></p>
+				</div>
+				<div class="code">
+					<img src="img/Addwe.png" alt="咦?图片被外星人拐走了">
+					<p>扫码 加入我们~~</p>
+				</div>
+			</div>
+			<div class="pc-box">
+				<div class="home-top">
+					<div class="box" id="box">
+						<div class="inner">
+							<!--轮播图-->
+							<ul>
+								<li><a href="#"><img src="img/banner1.png" alt="网络不稳定" style="width: 1200px;height: 350px;"></a></li>
+								<li><a href="https://qm.qq.com/q/fcX88AoOZO" target="_blank"><img src="img/banner-writer.png" alt="网络不稳定"></a></li>
+								<li><a href="live-spen.html"><img src="img/banner3.png" alt="网络不稳定" style="width: 1200px;height: 350px;"></a></li>
+							</ul>
+							<ol class="bar">
+							</ol>
+							<!--左右焦点-->
+							<div id="arr">
+								  <span id="left"> &lt;</span>
+								  <span id="right">&gt;</span>
+							</div>
+						</div>
+					</div>
+					<div class="user-info">
+						<div class="user-img">
+							<img src="img/user-bg.png" alt="咦?图片被外星人拐走了">
+						</div>
+						<div class="user-text">
+							<img src="https://thirdqq.qlogo.cn/g?b=sdk&k=B5zQIAvic3UmhcOJeBBDVxw&kti=ZxMZRRHpkkE&s=100&t=1729304779" alt="咦?图片被外星人拐走了">
+							<h3>梦蝶</h3>
+							<p>人不如意，梦中蝴蝶~(文章: 5)</p>
+							<div class="user-link">
+								<a href="about-main.html" target="_blank">关于我</a>
+								<a href="about-main.html#lianxi">联系我</a>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="zuopi">
+					<h3 class="command-title">精品内容</h3>
+					<a href="game.html" title="更多精彩等你发现~" target="_blank">
+						<img src="img/more.png" class="more_image" title="更多精彩~">
+					</a>
+					<div class="zuopi-list">
+						<ul>
+							<li>
+								<p>Tool-md5在线加密!<span>md5是基于哈希的不可逆加密算法！</span></p>
+								<a href="Tool-md5.html">传送门</a>
+							</li>
+							<li>
+								<p>Game-经典扫雷!<span>经典赌狗已上线--你能不能把困难完成呢?</span></p>
+								<a href="game-boom.html">传送门</a>
+							</li>
+							<li>
+								<p>Tool-随机密码生成!<span>对密码的选择困难说goodbye!支持选择</span></p>
+								<a href="Tool-password.html">传送门</a>
+							</li>
+						</ul>
+					</div>
+				</div>
+				<div class="live-pen">
+					<h3 class="command-title">生活随笔</h3>
+					<a href="live-spen.html" target="_blank">
+						<img src="img/more.png" class="more_image" title="更多作品~">
+					</a>
+					<div class="live-list">
+						<ul>
+							<li>
+								<img src="img/img-live/live-sunshie.png" alt="">
+								<div class="content-wrapper">
+									<h4>Sunshine--阳光</h4>
+									<span style="font-size: 14px; color: rgba(0,0,0,0.4);">不要活的太累，不要忙的太疲惫;想吃了不要嫌贵，想穿了不要说浪费;心烦了找
+										朋友聚会，瞌睡了倒头就睡。心态平和永远最美，天天快乐才对! -- 寄语</span>
+									<br />
+									<span>在这座被阳光宠爱的小屋前，治愈的旋律缓缓流淌，每一个角落都充满了温暖与希望。</span>
+									<br />
+									<span>清晨，当第一缕阳光轻轻拂过窗帘，唤醒了沉睡的小屋，治愈的旅程便开始了。院子的花草在晨光的抚摸下，慢慢舒展着身姿，露珠在叶片上闪烁，如同大自然洒落的珍珠。小鸟在枝头欢快地歌唱，它们的歌声是那样的清澈，仿佛能够洗净心灵的尘埃。</span>
+									<br />
+									<span>走进小屋，一股淡淡的香气扑鼻而来，那是从厨房传来的咖啡和烘焙的香味。墙上挂着的家庭照片，记录着岁月的痕迹，每一张笑脸都是治愈的力量，让人感受到家的温暖...</span>
+									<a href="live-sunshine.html" target="_blank">
+										<img src="img/img-live/open_all.png" alt="资源走丢了" title="查看完整内容">
+									</a>
+								</div>
+							</li>
+							<li>
+								<img src="img/img-live/live-friend.png" alt="">
+								<div class="content-wrapper">
+									<h4>Friend--友谊</h4>
+									<span style="font-size: 14px; color: rgba(0,0,0,0.4);">假如我有这样的朋友:能读懂我，能穿过层层面具，如入无人之境的走进我的心灵，用一种彼
+										此都懂的语言来和我进行灵魂的对话和交流--寄语(珍惜)</span>
+									<br />
+									<span>在这个纷扰的世界中，我一直在寻找，寻找一个能读懂我的朋友，一个能穿过我层层面具，直抵我心灵深处的知己。假如我有这样的朋友，那该多好：我们用一种彼此都懂的语言，进行灵魂的对话和交流。</span>
+									<br />
+									<span>我曾以为，这样的朋友是遥不可及的幻想，是生命中不可多得的奢侈品。直到有一天，在阳光洒满的午后，我遇到了你。你不是一个奇迹，却让我感受到了奇迹般的存在。在你的眼中，我看到了自己的倒影，那么真实，那么纯粹...</span>
+									<a href="live-friend.html" target="_blank">
+										<img src="img/img-live/open_all.png" alt="资源走丢了" title="查看完整内容">
+									</a>
+								</div>
+							</li>
+							<li>
+								<img src="img/img-live/live-famer.png" alt="">
+								<div class="content-wrapper">
+									<h4>Village--乡村</h4>
+									<span style="font-size: 14px; color: rgba(0,0,0,0.4);">太阳暖一点，再暖一点，生活慢一些，再慢一些，就是我要想的恬恬淡淡的，悠悠然然的日常生活.--寄语(累了就来吧)</span>
+									<br />
+									<span>乡村，这个字眼总是让人联想到宁静、和谐与自然之美。它远离城市的喧嚣与繁华，保持着一种独特的朴素与纯真。乡村的美，美在它的朴素，美在它的宁静，更美在它所蕴含的那份深厚的历史与文化底蕴。</span>
+									<br />
+									<span>乡村的房屋，没有城市的高楼大厦，却有着独特的韵味。白墙黑瓦，错落有致，仿佛一幅美丽的画卷。那些古老的树木，历经岁月的沧桑，依然屹立不倒，它们是乡村历史的见证者，也是乡村文化的传承者。</span>
+									<br />
+									<span>乡村的小路，蜿蜒曲折，像一条玉带一样缠绕在田野之间。走在乡村的...</span>
+									<a href="live-famer.html" target="_blank">
+										<img src="img/img-live/open_all.png" alt="资源走丢了" title="查看完整内容">
+									</a>
+								</div>
+							</li>
+						</ul>
+					</div>
+				</div>
+				<div class="footer">
+					<span>全权制作人: 梦蝶</span>
+					<a href="https://qm.qq.com/q/fC0Uy1gCYM"  target="_blank">联系我们(597569159)</a>
+					<span>网站已经存在: <span id="uptime"></span></span>
+					<span>&copy; 2024 梦蝶<a href="about-main.html">mengdie-moon</a>.版权所有 本站提供多种联系方式</span>
+				</div>
+			</div>
+		</div>
+	</div>
+	<script src="js/frist.js"></script>
+	<script>
+		document.addEventListener('DOMContentLoaded', function() {
+			var popup = document.getElementById('popup');
+			var closeButton = document.getElementById('closeButton');
+			var closeBtn = document.querySelector('.close'); // 获取关闭符号元素
+			var countdown = 5;
+			var hasShown = false; // 新增变量，用于记录弹窗是否已经显示过
+
+			function startCountdown() {
+				// 更新按钮文本并启动倒计时
+				var countdownInterval = setInterval(function() {
+				countdown--;
+				if (countdown >= 0) {
+					// 更新按钮的文本，将倒计时添加到原有文字后面
+					closeButton.textContent = '朕已阅！弹窗快滚(ノ`Д)ノ吧(' + countdown + '秒后可关闭)';
+				} else {
+					// 倒计时结束后，移除倒计时文本，并启用按钮
+					closeButton.textContent = '朕已阅！弹窗快滚(ノ`Д)ノ吧';
+					closeButton.disabled = false;
+					clearInterval(countdownInterval); // 清除定时器
+					countdown = 5; // 重置倒计时
+					hasShown = false; // 重置弹窗显示状态
+					closeBtn.style.pointerEvents = 'auto'; // 启用关闭符号的点击事件
+				}
+				}, 1000);
+			}
+
+			// 点击关闭按钮时隐藏弹窗
+			closeButton.onclick = function() {
+				if (!closeButton.disabled) {
+				popup.style.display = 'none';
+				}
+			};
+
+			// 点击关闭符号时隐藏弹窗
+			closeBtn.onclick = function() {
+				popup.style.display = 'none';
+			};
+
+			// 当文档加载完毕时显示弹窗
+			if (!hasShown) {
+				popup.style.display = 'block';
+				hasShown = true;
+				startCountdown();
+			}
+			});
+
+	</script>
+	<script src="js/KanBanNiang/live2d.js"></script>
+    <script src="js/KanBanNiang/waifu-tips.js"></script>
+    <script type="text/javascript">initModel()</script>
+	<script src="js/ImgForIndex.js"></script>
+
+    <link rel="stylesheet" type="text/css" href="css/KanBanNiang/flat-ui.min.css"/>
+</body>
+</html>
